@@ -7,7 +7,7 @@ import pygame
 
 
 class Color(object):
-    """颜色"""
+    """顏色"""
 
     GRAY = (242, 242, 242)
     BLACK = (0, 0, 0)
@@ -26,15 +26,15 @@ class Direction(Enum):
 
 
 class GameObject(object, metaclass=ABCMeta):
-    """游戏中的对象"""
+    """遊戲中的對象"""
 
     def __init__(self, x=0, y=0, color=Color.BLACK):
         """
         初始化方法
 
-        :param x: 横坐标
-        :param y: 纵坐标
-        :param color: 颜色
+        :param x: 橫座標
+        :param y: 縱座標
+        :param color: 顏色
         """
         self._x = x
         self._y = y
@@ -51,7 +51,7 @@ class GameObject(object, metaclass=ABCMeta):
     @abstractmethod
     def draw(self, screen):
         """
-        绘制
+        繪製
 
         :param screen: 屏幕
         """
@@ -59,17 +59,17 @@ class GameObject(object, metaclass=ABCMeta):
 
 
 class Wall(GameObject):
-    """围墙"""
+    """圍牆"""
 
     def __init__(self, x, y, width, height, color=Color.BLACK):
         """
         初始化方法
 
-        :param x: 横坐标
-        :param y: 纵坐标
-        :param width: 宽度
+        :param x: 橫座標
+        :param y: 縱座標
+        :param width: 寬度
         :param height: 高度
-        :param color: 颜色
+        :param color: 顏色
         """
         super().__init__(x, y, color)
         self._width = width
@@ -95,10 +95,10 @@ class Food(GameObject):
         """
         初始化方法
 
-        :param x: 横坐标
-        :param y: 纵坐标
+        :param x: 橫座標
+        :param y: 縱座標
         :param size: 大小
-        :param color: 颜色
+        :param color: 顏色
         """
         super().__init__(x, y, color)
         self._size = size
@@ -113,16 +113,16 @@ class Food(GameObject):
 
 
 class SnakeNode(GameObject):
-    """蛇身上的节点"""
+    """蛇身上的節點"""
 
     def __init__(self, x, y, size, color=Color.GREEN):
         """
         初始化方法
 
-        :param x: 横坐标
-        :param y: 纵坐标
+        :param x: 橫座標
+        :param y: 縱座標
         :param size: 大小
-        :param color: 颜色
+        :param color: 顏色
         """
         super().__init__(x, y, color)
         self._size = size
@@ -145,10 +145,10 @@ class Snake(GameObject):
         """
         初始化方法
 
-        :param x: 横坐标
-        :param y: 纵坐标
+        :param x: 橫座標
+        :param y: 縱座標
         :param size: 大小
-        :param length: 初始长度
+        :param length: 初始長度
         """
         super().__init__()
         self._dir = Direction.LEFT
@@ -173,7 +173,7 @@ class Snake(GameObject):
 
     def change_dir(self, new_dir):
         """
-        改变方向
+        改變方向
 
         :param new_dir: 新方向
         """
@@ -182,7 +182,7 @@ class Snake(GameObject):
             self._new_dir = new_dir
 
     def move(self):
-        """移动"""
+        """移動"""
         if self._new_dir:
             self._dir, self._new_dir = self._new_dir, None
         snake_dir = self._dir
@@ -201,9 +201,9 @@ class Snake(GameObject):
 
     def collide(self, wall):
         """
-        撞墙
+        撞牆
 
-        :param wall: 围墙
+        :param wall: 圍牆
         """
         head = self.head
         if head.x < wall.x or head.x + head.size > wall.x + wall.width \
@@ -216,7 +216,7 @@ class Snake(GameObject):
 
         :param food: 食物
 
-        :return: 吃到食物返回True否则返回False
+        :return: 吃到食物返回True否則返回False
         """
         if self.head.x == food.x and self.head.y == food.y:
             tail = self._nodes[-1]
@@ -239,7 +239,7 @@ class Snake(GameObject):
 def main():
 
     def refresh():
-        """刷新游戏窗口"""
+        """刷新遊戲窗口"""
         screen.fill(Color.GRAY)
         wall.draw(screen)
         food.draw(screen)
@@ -247,7 +247,7 @@ def main():
         pygame.display.flip()
 
     def handle_key_event(key_event):
-        """处理按键事件"""
+        """處理按鍵事件"""
         key = key_event.key
         if key == pygame.K_F2:
             reset_game()
@@ -264,7 +264,7 @@ def main():
                 snake.change_dir(new_dir)
 
     def create_food():
-        """创建食物"""
+        """創建食物"""
         unit_size = snake.head.size
         max_row = wall.height // unit_size
         max_col = wall.width // unit_size
@@ -273,7 +273,7 @@ def main():
         return Food(wall.x + unit_size * col, wall.y + unit_size * row, unit_size)
 
     def reset_game():
-        """重置游戏"""
+        """重置遊戲"""
         nonlocal food, snake
         food = create_food()
         snake = Snake(250, 290)
@@ -313,14 +313,14 @@ def main():
     food = create_food()
     pygame.init()
     screen = pygame.display.set_mode((620, 620))
-    pygame.display.set_caption('贪吃蛇')
-    # 创建控制游戏每秒帧数的时钟
+    pygame.display.set_caption('貪吃蛇')
+    # 創建控制遊戲每秒幀數的時鐘
     clock = pygame.time.Clock()
     running = True
-    # 启动后台线程负责刷新窗口和让蛇移动
+    # 啓動後臺線程負責刷新窗口和讓蛇移動
     # BackgroundTask().start()
     Thread(target=background_task).start()
-    # 处理事件的消息循环
+    # 處理事件的消息循環
     while running:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:

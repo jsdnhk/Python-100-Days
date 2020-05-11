@@ -1,5 +1,5 @@
 """
-example04.py - 同步请求的例子
+example04.py - 同步請求的例子
 """
 import json
 import os
@@ -14,14 +14,14 @@ from tornado.options import define, options, parse_command_line
 
 define('port', default=8888, type=int)
 
-# 请求天行数据提供的API数据接口
+# 請求天行數據提供的API數據接口
 REQ_URL = 'http://api.tianapi.com/guonei/'
-# 在天行数据网站注册后可以获得API_KEY
+# 在天行數據網站註冊後可以獲得API_KEY
 API_KEY = 'your_personal_api_key'
 
 
 class MainHandler(tornado.web.RequestHandler):
-    """自定义请求处理器"""
+    """自定義請求處理器"""
 
     def get(self):
         resp = requests.get(f'{REQ_URL}?key={API_KEY}')
@@ -30,7 +30,7 @@ class MainHandler(tornado.web.RequestHandler):
 
 
 def main():
-    """主函数"""
+    """主函數"""
     parse_command_line()
     app = tornado.web.Application(
         handlers=[(r'/', MainHandler), ],

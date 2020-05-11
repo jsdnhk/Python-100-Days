@@ -1,8 +1,8 @@
 """
-套接字 - 基于UDP协议Echo服务器
+套接字 - 基於UDP協議Echo服務器
 
 Version: 0.1
-Author: 骆昊
+Author: 駱昊
 Date: 2018-03-22
 """
 from socket import *

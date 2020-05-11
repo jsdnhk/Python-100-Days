@@ -1,8 +1,8 @@
 """
-定义和使用时钟类
+定義和使用時鐘類
 
 Version: 0.1
-Author: 骆昊
+Author: 駱昊
 Date: 2018-03-08
 """
 
@@ -12,9 +12,9 @@ import os
 
 class Clock(object):
 
-    # Python中的函数是没有重载的概念的
-    # 因为Python中函数的参数没有类型而且支持缺省参数和可变参数
-    # 用关键字参数让构造器可以传入任意多个参数来实现其他语言中的构造器重载
+    # Python中的函數是沒有重載的概念的
+    # 因爲Python中函數的參數沒有類型而且支持缺省參數和可變參數
+    # 用關鍵字參數讓構造器可以傳入任意多個參數來實現其他語言中的構造器重載
     def __init__(self, **kw):
         if 'hour' in kw and 'minute' in kw and 'second' in kw:
             self._hour = kw['hour']

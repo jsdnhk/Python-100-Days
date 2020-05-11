@@ -21,9 +21,9 @@ class SaveImagePipeline(ImagesPipeline):
         yield Request(url=item['url'])
 
     def item_completed(self, results, item, info):
-        logger.debug('图片下载完成!')
+        logger.debug('圖片下載完成!')
         if not results[0][0]:
-            raise DropItem('下载失败')
+            raise DropItem('下載失敗')
         return item
 
     def file_path(self, request, response=None, info=None):

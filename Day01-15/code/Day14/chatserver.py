@@ -35,7 +35,7 @@ def main():
     clients = []
     while True:
         curr_client, addr = server.accept()
-        print(addr[0], '连接到服务器.')
+        print(addr[0], '連接到服務器.')
         clients.append(curr_client)
         ClientHandler(curr_client).start()
 

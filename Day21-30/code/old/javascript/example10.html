@@ -53,42 +53,42 @@
 	<body>
 		<div id="container">
 			<ul id="fruits">
-				<li>苹果<a href="">×</a></li>
+				<li>蘋果<a href="">×</a></li>
 				<li>香蕉<a href="">×</a></li>
-				<li>火龙果<a href="">×</a></li>
+				<li>火龍果<a href="">×</a></li>
 				<li>西瓜<a href="">×</a></li>
 			</ul>
 			<input id='name' type="text" name="fruit">
-			<input id="ok" type="button" value="确定">
+			<input id="ok" type="button" value="確定">
 		</div>
 		<script src="js/jquery.min.js"></script>
 		<script>
 			function removeItem(evt) {
 				evt.preventDefault();
-				// $函数的第四种用法：参数是原生的JS对象
-				// 将原生的JS对象包装成对应的jQuery对象
+				// $函數的第四種用法：參數是原生的JS對象
+				// 將原生的JS對象包裝成對應的jQuery對象
 				$(evt.target).parent().remove();
 			}
 			
-			// $函数的第一种用法: 参数是另一个函数
-			// 传入的函数是页面加载完成之后要执行的回调函数
+			// $函數的第一種用法: 參數是另一個函數
+			// 傳入的函數是頁面加載完成之後要執行的回調函數
 			// $(document).ready(function() {});
 			$(function() {
-				// $函数的第二种用法：参数是一个选择器字符串
-				// 获取元素并得到与之对应的jQuery对象（伪数组）
+				// $函數的第二種用法：參數是一個選擇器字符串
+				// 獲取元素並得到與之對應的jQuery對象（僞數組）
 				$('#fruits a').on('click', removeItem);
 				$('#ok').on('click', function() {
 					var fruitName = $('#name').val().trim();
 					if (fruitName.length > 0) {
 						$('#fruits').append(
-							// $函数的第三种用法：参数是一个标签字符串
-							// 创建新元素并得到与之对应的jQuery对象
+							// $函數的第三種用法：參數是一個標籤字符串
+							// 創建新元素並得到與之對應的jQuery對象
 							$('<li>').text(fruitName).append(
 								$('<a>').attr('href', '').text('×').on('click', removeItem)
 							)
 						);
 					}
-					// 对jQuery对象使用下标运算或调用get()方法会得到原生JS对象
+					// 對jQuery對象使用下標運算或調用get()方法會得到原生JS對象
 					$('#name').val('').get(0).focus();
 				});
 			});

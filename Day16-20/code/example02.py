@@ -1,14 +1,14 @@
 """
-排序 - 冒泡排序、选择排序、归并排序、快速排序
-冒泡排序 - O(n ** 2)：两两比较，大的下沉
+排序 - 冒泡排序、選擇排序、歸併排序、快速排序
+冒泡排序 - O(n ** 2)：兩兩比較，大的下沉
 35, 97, 12, 68, 55, 73, 81, 40
 35, 12, 68, 55, 73, 81, 40, [97]
 12, 35, 55, 68, 73, 40, [81]
 12, 35, 55, 68, 40, [73]
 ...
-选择排序 - O(n ** 2)：每次从剩下元素中选择最小
+選擇排序 - O(n ** 2)：每次從剩下元素中選擇最小
 -----------------------------------------
-归并排序 - O(n * log_2 n) - 高级排序算法
+歸併排序 - O(n * log_2 n) - 高級排序算法
 35, 97, 12, 68, 55, 73, 81, 40
 [35, 97, 12, 68], [55, 73, 81, 40]
 [35, 97], [12, 68], [55, 73], [81, 40]
@@ -17,7 +17,7 @@
 [12, 35, 68, 97], [40, 55, 73, 81]
 [12, 35, 40, 55, 68, 73, 81, 97]
 -----------------------------------------
-快速排序 - 以枢轴为界将列表中的元素划分为两个部分，左边都比枢轴小，右边都比枢轴大
+快速排序 - 以樞軸爲界將列表中的元素劃分爲兩個部分，左邊都比樞軸小，右邊都比樞軸大
 35, 97, 12, 68, 55, 73, 81, 40
 35, 12, [40], 68, 55, 73, 81, 97
 [12], 35, [40], 68, 55, 73, 81, [97]
@@ -44,7 +44,7 @@ class Person(object):
 
 
 def select_sort(origin_items, comp=lambda x, y: x < y):
-    """简单选择排序"""
+    """簡單選擇排序"""
     items = origin_items[:]
     for i in range(len(items) - 1):
         min_index = i
@@ -55,13 +55,13 @@ def select_sort(origin_items, comp=lambda x, y: x < y):
     return items
 
 
-# 函数的设计要尽量做到无副作用（不影响调用者）
+# 函數的設計要儘量做到無副作用（不影響調用者）
 # 9 1 2 3 4 5 6 7 8
 # 9 2 3 4 5 6 7 8 1
-# *前面的参数叫位置参数，传参时只需要对号入座即可
-# *后面的参数叫命名关键字参数，传参时必须给出参数名和参数值
-# *args - 可变参数 - 元组
-# **kwargs - 关键字参数 - 字典
+# *前面的參數叫位置參數，傳參時只需要對號入座即可
+# *後面的參數叫命名關鍵字參數，傳參時必須給出參數名和參數值
+# *args - 可變參數 - 元組
+# **kwargs - 關鍵字參數 - 字典
 def bubble_sort(origin_items, *, comp=lambda x, y: x > y):
     """冒泡排序"""
     items = origin_items[:]
@@ -83,7 +83,7 @@ def bubble_sort(origin_items, *, comp=lambda x, y: x > y):
 
 
 def merge_sort(items, comp=lambda x, y: x <= y):
-    """归并排序"""
+    """歸併排序"""
     if len(items) < 2:
         return items[:]
     mid = len(items) // 2
@@ -93,7 +93,7 @@ def merge_sort(items, comp=lambda x, y: x <= y):
 
 
 def merge(items1, items2, comp=lambda x, y: x <= y):
-    """合并（将两个有序列表合并成一个新的有序列表）"""
+    """合併（將兩個有序列表合併成一個新的有序列表）"""
     items = []
     index1, index2 = 0, 0
     while index1 < len(items1) and index2 < len(items2):
@@ -116,7 +116,7 @@ def quick_sort(origin_items, comp=lambda x, y: x <= y):
 
 
 def _quick_sort(items, start, end, comp):
-    """递归调用划分和排序"""
+    """遞歸調用劃分和排序"""
     if start < end:
         pos = _partition(items, start, end, comp)
         _quick_sort(items, start, pos - 1, comp)
@@ -124,7 +124,7 @@ def _quick_sort(items, start, end, comp):
 
 
 def _partition(items, start, end, comp):
-    """划分"""
+    """劃分"""
     pivot = items[end]
     i = start - 1
     for j in range(start, end):
@@ -136,7 +136,7 @@ def _partition(items, start, end, comp):
 
 
 def main():
-    """主函数"""
+    """主函數"""
     items = [35, 97, 12, 68, 55, 73, 81, 40]
     # print(bubble_sort(items))
     # print(select_sort(items))

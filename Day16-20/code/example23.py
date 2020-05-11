@@ -1,5 +1,5 @@
 """
-协程（coroutine）- 可以在需要时进行切换的相互协作的子程序
+協程（coroutine）- 可以在需要時進行切換的相互協作的子程序
 """
 import asyncio
 
@@ -7,12 +7,12 @@ from example15 import is_prime
 
 
 def num_generator(m, n):
-    """指定范围的数字生成器"""
+    """指定範圍的數字生成器"""
     yield from range(m, n + 1)
 
 
 async def prime_filter(m, n):
-    """素数过滤器"""
+    """素數過濾器"""
     primes = []
     for i in num_generator(m, n):
         if is_prime(i):
@@ -35,7 +35,7 @@ async def square_mapper(m, n):
 
 
 def main():
-    """主函数"""
+    """主函數"""
     loop = asyncio.get_event_loop()
     future = asyncio.gather(prime_filter(2, 100), square_mapper(1, 100))
     future.add_done_callback(lambda x: print(x.result()))

@@ -20,13 +20,13 @@
 			<hr>
 		</div>
 		<div class="right">
-			<a href="/show_cart">查看购物车</a>
+			<a href="/show_cart">查看購物車</a>
 		</div>
 		<table style="clear:both;">
 			<tr>
-				<th>商品名称</th>
-				<th>商品价格</th>
-				<th>商品图片</th>
+				<th>商品名稱</th>
+				<th>商品價格</th>
+				<th>商品圖片</th>
 				<th>操作</th>
 			</tr>
 			{% for goods in goods_list %}
@@ -37,7 +37,7 @@
 					<img src="{% static goods.image %}" alt="{{ goods.name }}">
 				</td>
 				<td>
-					<a href="/add_to_cart/{{ goods.id }}">加入购物车</a>
+					<a href="/add_to_cart/{{ goods.id }}">加入購物車</a>
 				</td>
 			</tr>
 			{% endfor %}

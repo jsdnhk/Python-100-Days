@@ -16,13 +16,13 @@ foreign key (catparent) references tb_course_catalog(catid)
 on delete cascade 
 on update cascade;
 
-insert into tb_course_catalog values (default, '前端开发', null);
-insert into tb_course_catalog values (default, '后端开发', null);
-insert into tb_course_catalog values (default, '移动开发', null);
-insert into tb_course_catalog values (default, '数据库', null);
-insert into tb_course_catalog values (default, '云计算&大数据', null);
-insert into tb_course_catalog values (default, '运维&测试', null);
-insert into tb_course_catalog values (default, 'UI设计', null);
+insert into tb_course_catalog values (default, '前端開發', null);
+insert into tb_course_catalog values (default, '後端開發', null);
+insert into tb_course_catalog values (default, '移動開發', null);
+insert into tb_course_catalog values (default, '數據庫', null);
+insert into tb_course_catalog values (default, '雲計算&大數據', null);
+insert into tb_course_catalog values (default, '運維&測試', null);
+insert into tb_course_catalog values (default, 'UI設計', null);
 
 
 insert into tb_course_catalog values (default, 'HTML/CSS', 1);

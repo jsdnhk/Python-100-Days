@@ -18,14 +18,14 @@ class DownloadHanlder(Thread):
 
 
 def main():
-    # 通过requests模块的get函数获取网络资源
+    # 通過requests模塊的get函數獲取網絡資源
     resp = requests.get(
         'http://api.tianapi.com/meinv/?key=772a81a51ae5c780251b1f98ea431b84&num=10')
-    # 将服务器返回的JSON格式的数据解析为字典
+    # 將服務器返回的JSON格式的數據解析爲字典
     data_model = resp.json()
     for mm_dict in data_model['newslist']:
         url = mm_dict['picUrl']
-        # 通过多线程的方式实现图片下载
+        # 通過多線程的方式實現圖片下載
         DownloadHanlder(url).start()
 
 

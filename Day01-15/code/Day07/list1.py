@@ -1,11 +1,11 @@
 """
-定义和使用列表
-- 用下标访问元素
+定義和使用列表
+- 用下標訪問元素
 - 添加元素
-- 删除元素
+- 刪除元素
 
 Version: 0.1
-Author: 骆昊
+Author: 駱昊
 Date: 2018-03-06
 """
 
@@ -13,7 +13,7 @@ Date: 2018-03-06
 def main():
     fruits = ['grape', '@pple', 'strawberry', 'waxberry']
     print(fruits)
-    # 通过下标访问元素
+    # 通過下標訪問元素
     print(fruits[0])
     print(fruits[1])
     print(fruits[-1])
@@ -26,7 +26,7 @@ def main():
     fruits.append('pitaya')
     fruits.insert(0, 'banana')
     print(fruits)
-    # 删除元素
+    # 刪除元素
     del fruits[1]
     fruits.pop()
     fruits.pop(0)

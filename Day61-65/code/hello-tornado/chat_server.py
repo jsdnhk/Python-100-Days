@@ -1,5 +1,5 @@
 """
-chat_server.py - 聊天服务器
+chat_server.py - 聊天服務器
 """
 import os
 

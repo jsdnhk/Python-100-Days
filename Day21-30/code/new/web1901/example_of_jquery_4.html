@@ -2,10 +2,10 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Ajax请求</title>
+		<title>Ajax請求</title>
 	</head>
 	<body>
-		<button id="load">加载更多</button>
+		<button id="load">加載更多</button>
 		<div id="photos"></div>
 		<script src="js/jquery.min.js"></script>
 		<script>
@@ -16,23 +16,23 @@
 				page += 1
 				let data = {"key": "772a81a51ae5c780251b1f98ea431b84", "page": page}
 				$.ajax({
-					"url": url,				// 请求的地址(统一资源定位符)
-					"type": "get",			// 请求的方法(get/post/delete/put)
-					"data": data,			// 发送给服务器的数据
-					"dataType": "json",		// 服务器返回的数据类型
-					"headers": {},			// 请求头
-					"success": (json) => {	// 请求成功后要执行的回调函数
+					"url": url,				// 請求的地址(統一資源定位符)
+					"type": "get",			// 請求的方法(get/post/delete/put)
+					"data": data,			// 發送給服務器的數據
+					"dataType": "json",		// 服務器返回的數據類型
+					"headers": {},			// 請求頭
+					"success": (json) => {	// 請求成功後要執行的回調函數
 						json.newslist.forEach((mm) => {
 							$('#photos').prepend($('<img width="300">').attr('src', mm.picUrl))
 						})
 					},
-					"error": (error) => {	// 请求失败后要执行的回调函数
+					"error": (error) => {	// 請求失敗後要執行的回調函數
 					}
 				})
-				// $对象的getJSON方法可以执行异步请求(get请求)获得服务器返回的JSON格式的数据
-				// 第一个参数是请求的URL(统一资源定位符)
-				// 第二个参数是要发送给服务器的数据(JSON格式), 如果没有数据发给服务器可以省略不写
-				// 第三个参数是请求成功服务器返回数据之后要执行的回调函数, 其参数为服务器返回的内容处理后的JSON对象
+				// $對象的getJSON方法可以執行異步請求(get請求)獲得服務器返回的JSON格式的數據
+				// 第一個參數是請求的URL(統一資源定位符)
+				// 第二個參數是要發送給服務器的數據(JSON格式), 如果沒有數據發給服務器可以省略不寫
+				// 第三個參數是請求成功服務器返回數據之後要執行的回調函數, 其參數爲服務器返回的內容處理後的JSON對象
 // 				$.getJSON(url, data, (json) => {
 // 					json.newslist.forEach((mm) => {
 // 						$('#photos').prepend($('<img>').attr('src', mm.picUrl).attr('width', '300'))

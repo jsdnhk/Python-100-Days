@@ -1,21 +1,21 @@
 <!--
-    HTML - 超文本标记语言 - 可以在浏览器中运行出网页的编程语言
-    1. 标签 - 承载网页上显示的内容
-    2. 层叠样式表 - 负责网页的显示
-    3. JavaScript - 负责交互行为
+    HTML - 超文本標記語言 - 可以在瀏覽器中運行出網頁的編程語言
+    1. 標籤 - 承載網頁上顯示的內容
+    2. 層疊樣式表 - 負責網頁的顯示
+    3. JavaScript - 負責交互行爲
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>垃圾分类查询助手</title>
+    <title>垃圾分類查詢助手</title>
     <!-- 
-        0. 可回收物（如：玻璃类、牛奶盒、金属类、塑料类、废纸类、织物类）
-        1. 有害垃圾（如：废电池、废墨盒、废油漆桶、过期药品、废灯管、杀虫剂）
-        2. 厨余垃圾（如：骨骼内脏、菜梗菜叶、果皮、茶叶渣、残枝落叶、剩菜剩饭）
-        3. 其他垃圾（如：宠物粪便、烟头、污染纸张、破旧陶瓷品、灰土、一次性餐具）
+        0. 可回收物（如：玻璃類、牛奶盒、金屬類、塑料類、廢紙類、織物類）
+        1. 有害垃圾（如：廢電池、廢墨盒、廢油漆桶、過期藥品、廢燈管、殺蟲劑）
+        2. 廚餘垃圾（如：骨骼內臟、菜梗菜葉、果皮、茶葉渣、殘枝落葉、剩菜剩飯）
+        3. 其他垃圾（如：寵物糞便、菸頭、污染紙張、破舊陶瓷品、灰土、一次性餐具）
     -->
-    <!-- 层叠样式表 -->
+    <!-- 層疊樣式表 -->
     <style>
         .search, .result {
             width: 720px;
@@ -60,33 +60,33 @@
     </style>
 </head>
 <body>
-    <!-- div 是代表一个逻辑区域的块标签 -->
+    <!-- div 是代表一個邏輯區域的塊標籤 -->
     <div id="app">
         <div class="search">
-            <!-- type属性是text的input标签代表文本框 可以接收用户输入 -->
-            <!-- placeholder是文本框的输入提示 -->
-            <input type="text" placeholder="请输入垃圾名字" v-model="word" @keydown.enter="search()">
-            <!-- button代表按钮 点击可以开始查询 -->
-            <button @click="search()">查询</button>
+            <!-- type屬性是text的input標籤代表文本框 可以接收用戶輸入 -->
+            <!-- placeholder是文本框的輸入提示 -->
+            <input type="text" placeholder="請輸入垃圾名字" v-model="word" @keydown.enter="search()">
+            <!-- button代表按鈕 點擊可以開始查詢 -->
+            <button @click="search()">查詢</button>
         </div>
         <div class="result">
-            <!-- p代表一个段落 -->
-            <p v-if="searched && !results">没有对应的查询结果</p>
+            <!-- p代表一個段落 -->
+            <p v-if="searched && !results">沒有對應的查詢結果</p>
             <div v-for="result in results">
                 <p>
-                    <!-- img是图像标签 可以用来实现图片-->
+                    <!-- img是圖像標籤 可以用來實現圖片-->
                     <img :src="pictures[result.type]" width="56" :alt="types[result.type]">
                     &nbsp;&nbsp;
-                    <!-- span是跨度标签 代表一个逻辑区域（不分段）-->
+                    <!-- span是跨度標籤 代表一個邏輯區域（不分段）-->
                     <span>{{ result.name }}</span>
                     &nbsp;&nbsp;
-                    <span class="pre" v-if="result.aipre == 1">（预测结果）</span>
+                    <span class="pre" v-if="result.aipre == 1">（預測結果）</span>
                 </p>
-                <p class="explain">说明：{{ result.explain }}</p>
+                <p class="explain">說明：{{ result.explain }}</p>
             </div>
         </div>
     </div>
-    <!-- JavaScript代码 可以负责在用户点击查询按钮时联网获取垃圾分类结果 -->
+    <!-- JavaScript代碼 可以負責在用戶點擊查詢按鈕時聯網獲取垃圾分類結果 -->
     <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
     <script>
         new Vue({
@@ -94,12 +94,12 @@
             data: {
                 word: '',
                 searched: false,
-                types: ['可回收物', '有害垃圾', '厨余垃圾', '其他垃圾'],
+                types: ['可回收物', '有害垃圾', '廚餘垃圾', '其他垃圾'],
                 pictures: ['recyclable.png', 'harmful-waste.png', 'kitchen-waste.png', 'other-waste.png'],
                 results: []
             },
             methods: {
-                // 查询垃圾分类的函数
+                // 查詢垃圾分類的函數
                 search() {
                     if (this.word.trim().length > 0) {
                         let key = '9aeb28ee8858a167c1755f856f830e22'
@@ -107,7 +107,7 @@
                         fetch(url)
                             .then(resp => resp.json())
                             .then(json => {
-                                // 处理返回的JSON格式数据
+                                // 處理返回的JSON格式數據
                                 this.searched = true
                                 this.results = json.newslist
                             })

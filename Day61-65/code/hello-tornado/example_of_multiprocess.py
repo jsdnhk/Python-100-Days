@@ -1,11 +1,11 @@
 """
-用下面的命令运行程序并查看执行时间，例如：
+用下面的命令運行程序並查看執行時間，例如：
 time python3 example05.py
 real    0m20.657s
 user    1m17.749s
 sys     0m0.158s
-使用多进程后实际执行时间为20.657秒，而用户时间1分17.749秒约为实际执行时间的4倍
-这就证明我们的程序通过多进程使用了CPU的多核特性，而且这台计算机配置了4核的CPU
+使用多進程後實際執行時間爲20.657秒，而用戶時間1分17.749秒約爲實際執行時間的4倍
+這就證明我們的程序通過多進程使用了CPU的多核特性，而且這臺計算機配置了4核的CPU
 """
 import concurrent.futures
 import math
@@ -28,7 +28,7 @@ PRIMES = [
 
 
 def is_prime(num):
-    """判断素数"""
+    """判斷素數"""
     assert num > 0
     if num % 2 == 0:
         return False
@@ -39,7 +39,7 @@ def is_prime(num):
 
 
 def main():
-    """主函数"""
+    """主函數"""
     with concurrent.futures.ProcessPoolExecutor() as executor:
         for number, prime in zip(PRIMES, executor.map(is_prime, PRIMES)):
             print('%d is prime: %s' % (number, prime))

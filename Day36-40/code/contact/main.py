@@ -1,17 +1,17 @@
 """
--- 创建名为address的数据库
+-- 創建名爲address的數據庫
 create database address default charset utf8;
 
--- 切换到address数据库
+-- 切換到address數據庫
 use address;
 
--- 创建联系人表tb_contacter
+-- 創建聯繫人表tb_contacter
 create table tb_contacter
 (
-conid int auto_increment comment '编号',
+conid int auto_increment comment '編號',
 conname varchar(31) not null comment '姓名',
-contel varchar(15) default '' comment '电话',
-conemail varchar(255) default'' comment '邮箱',
+contel varchar(15) default '' comment '電話',
+conemail varchar(255) default'' comment '郵箱',
 primary key (conid)
 );
 """
@@ -52,8 +52,8 @@ class Contacter(object):
 
 def input_contacter_info():
     name = input('姓名: ')
-    tel = input('手机: ')
-    email = input('邮箱: ')
+    tel = input('手機: ')
+    email = input('郵箱: ')
     return name, tel, email
 
 
@@ -63,20 +63,20 @@ def add_new_contacter(con):
         with con.cursor() as cursor:
             if cursor.execute(INSERT_CONTACTER,
                               (name, tel, email)) == 1:
-                print('添加联系人成功!')
+                print('添加聯繫人成功!')
     except pymysql.MySQLError as err:
         print(err)
-        print('添加联系人失败!')
+        print('添加聯繫人失敗!')
 
 
 def delete_contacter(con, contacter):
     try:
         with con.cursor() as cursor:
             if cursor.execute(DELETE_CONTACTER, (contacter.id, )) == 1:
-                print('联系人已经删除!')
+                print('聯繫人已經刪除!')
     except pymysql.MySQLError as err:
         print(err)
-        print('删除联系人失败!')
+        print('刪除聯繫人失敗!')
 
 
 def edit_contacter_info(con, contacter):
@@ -89,21 +89,21 @@ def edit_contacter_info(con, contacter):
             if cursor.execute(UPDATE_CONTACTER,
                               (contacter.name, contacter.tel,
                                contacter.email, contacter.id)) == 1:
-                print('联系人信息已经更新!')
+                print('聯繫人信息已經更新!')
     except pymysql.MySQLError as err:
         print(err)
-        print('更新联系人信息失败!')
+        print('更新聯繫人信息失敗!')
 
 
 def show_contacter_detail(con, contacter):
     print('姓名:', contacter.name)
-    print('手机号:', contacter.tel)
-    print('邮箱:', contacter.email)
-    choice = input('是否编辑联系人信息?(yes|no)')
+    print('手機號:', contacter.tel)
+    print('郵箱:', contacter.email)
+    choice = input('是否編輯聯繫人信息?(yes|no)')
     if choice == 'yes':
         edit_contacter_info(con, contacter)
     else:
-        choice = input('是否删除联系人信息?(yes|no)')
+        choice = input('是否刪除聯繫人信息?(yes|no)')
         if choice == 'yes':
             delete_contacter(con, contacter)
 
@@ -115,9 +115,9 @@ def show_search_result(con, cursor):
         contacters_list.append(contacter)
         print('[%d]: %s' % (index, contacter.name))
     if len(contacters_list) > 0:
-        choice = input('是否查看联系人详情?(yes|no)')
+        choice = input('是否查看聯繫人詳情?(yes|no)')
         if choice.lower() == 'yes':
-            index = int(input('请输入编号: '))
+            index = int(input('請輸入編號: '))
             if 0 <= index < cursor.rowcount:
                 show_contacter_detail(con, contacters_list[index])
 
@@ -133,20 +133,20 @@ def find_all_contacters(con):
                                (size, (page - 1) * size))
                 show_search_result(con, cursor)
                 if page * size < total:
-                    choice = input('继续查看下一页?(yes|no)')
+                    choice = input('繼續查看下一頁?(yes|no)')
                     if choice.lower() == 'yes':
                         page += 1
                     else:
                         break
                 else:
-                    print('没有下一页记录!')
+                    print('沒有下一頁記錄!')
                     break
     except pymysql.MySQLError as err:
         print(err)
 
 
 def find_contacters_by_name(con):
-    name = input('联系人姓名: ')
+    name = input('聯繫人姓名: ')
     try:
         with con.cursor() as cursor:
             cursor.execute(SELECT_CONTACTERS_BY_NAME,
@@ -158,10 +158,10 @@ def find_contacters_by_name(con):
 
 def find_contacters(con):
     while True:
-        print('1. 查看所有联系人')
-        print('2. 搜索联系人')
+        print('1. 查看所有聯繫人')
+        print('2. 搜索聯繫人')
         print('3. 退出查找')
-        choice = int(input('请输入: '))
+        choice = int(input('請輸入: '))
         if choice == 1:
             find_all_contacters(con)
         elif choice == 2:
@@ -177,19 +177,19 @@ def main():
                           autocommit=True,
                           cursorclass=pymysql.cursors.DictCursor)
     while True:
-        print('=====通讯录=====')
-        print('1. 新建联系人')
-        print('2. 查找联系人')
-        print('3. 退出系统')
+        print('=====通訊錄=====')
+        print('1. 新建聯繫人')
+        print('2. 查找聯繫人')
+        print('3. 退出系統')
         print('===============')
-        choice = int(input('请选择: '))
+        choice = int(input('請選擇: '))
         if choice == 1:
             add_new_contacter(con)
         elif choice == 2:
             find_contacters(con)
         elif choice == 3:
             con.close()
-            print('谢谢使用, 再见！')
+            print('謝謝使用, 再見！')
             break
 
 

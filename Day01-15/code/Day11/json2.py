@@ -1,14 +1,14 @@
 """
-写入JSON文件
+寫入JSON文件
 
 Version: 0.1
-Author: 骆昊
+Author: 駱昊
 Date: 2018-03-13
 """
 
 import json
 
-teacher_dict = {'name': '白元芳', 'age': 25, 'title': '讲师'}
+teacher_dict = {'name': '白元芳', 'age': 25, 'title': '講師'}
 json_str = json.dumps(teacher_dict)
 print(json_str)
 print(type(json_str))

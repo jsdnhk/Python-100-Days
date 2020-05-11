@@ -1,7 +1,7 @@
 """
-装饰器 - 装饰器中放置的通常都是横切关注（cross-concern）功能
-所谓横切关注功能就是很多地方都会用到但跟正常业务又逻辑没有必然联系的功能
-装饰器实际上是实现了设计模式中的代理模式 - AOP（面向切面编程）
+裝飾器 - 裝飾器中放置的通常都是橫切關注（cross-concern）功能
+所謂橫切關注功能就是很多地方都會用到但跟正常業務又邏輯沒有必然聯繫的功能
+裝飾器實際上是實現了設計模式中的代理模式 - AOP（面向切面編程）
 """
 from functools import wraps
 from random import randint
@@ -58,7 +58,7 @@ def main():
         # print(random_delay.__name__)
         random_delay(3, 5)
     # for _ in range(3):
-    #     # 取消掉装饰器
+    #     # 取消掉裝飾器
     #     random_delay.__wrapped__(3, 5)
 
 

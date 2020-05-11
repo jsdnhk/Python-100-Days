@@ -24,7 +24,7 @@ def create_delivery_man(name, capacity=1):
 def create_package_center(consumer, max_packages):
     num = 0
     while num <= max_packages:
-        print('快递中心准备派送%d号包裹' % num)
+        print('快遞中心準備派送%d號包裹' % num)
         consumer.send('包裹-%d' % num)
         num += 1
         if num % 10 == 0:
@@ -34,7 +34,7 @@ def create_package_center(consumer, max_packages):
 
 def main():
     print(create_delivery_man.__name__)
-    dm = create_delivery_man('王大锤', 7)
+    dm = create_delivery_man('王大錘', 7)
     create_package_center(dm, 25)
 
 

@@ -1,17 +1,17 @@
 """
-扩展性系统性能
-- 垂直扩展 - 增加单节点处理能力
-- 水平扩展 - 将单节点变成多节点（读写分离/分布式集群）
-并发编程 - 加速程序执行 / 改善用户体验
-耗时间的任务都尽可能独立的执行，不要阻塞代码的其他部分
-- 多线程
-1. 创建Thread对象指定target和args属性并通过start方法启动线程
-2. 继承Thread类并重写run方法来定义线程执行的任务
-3. 创建线程池对象ThreadPoolExecutor并通过submit来提交要执行的任务
-第3种方式可以通过Future对象的result方法在将来获得线程的执行结果
-也可以通过done方法判定线程是否执行结束
-- 多进程
-- 异步I/O
+擴展性系統性能
+- 垂直擴展 - 增加單節點處理能力
+- 水平擴展 - 將單節點變成多節點（讀寫分離/分佈式集羣）
+併發編程 - 加速程序執行 / 改善用戶體驗
+耗時間的任務都儘可能獨立的執行，不要阻塞代碼的其他部分
+- 多線程
+1. 創建Thread對象指定target和args屬性並通過start方法啓動線程
+2. 繼承Thread類並重寫run方法來定義線程執行的任務
+3. 創建線程池對象ThreadPoolExecutor並通過submit來提交要執行的任務
+第3種方式可以通過Future對象的result方法在將來獲得線程的執行結果
+也可以通過done方法判定線程是否執行結束
+- 多進程
+- 異步I/O
 """
 import glob
 import os
@@ -60,7 +60,7 @@ def gen_thumbnail(infile):
 #     for t in threads:
 #         t.join()
 #     end = time.time()
-#     print(f'耗时: {end - start}秒')
+#     print(f'耗時: {end - start}秒')
 
 
 def main():
@@ -69,17 +69,17 @@ def main():
     start = time.time()
     for infile in glob.glob('images/*'):
         # submit方法是非阻塞式的方法 
-        # 即便工作线程数已经用完，submit方法也会接受提交的任务 
+        # 即便工作線程數已經用完，submit方法也會接受提交的任務 
         future = pool.submit(gen_thumbnail, infile)
         futures.append(future)
     for future in futures:
-        # result方法是一个阻塞式的方法 如果线程还没有结束
-        # 暂时取不到线程的执行结果 代码就会在此处阻塞
+        # result方法是一個阻塞式的方法 如果線程還沒有結束
+        # 暫時取不到線程的執行結果 代碼就會在此處阻塞
         future.result()
     end = time.time()
-    print(f'耗时: {end - start}秒')
-    # shutdown也是非阻塞式的方法 但是如果已经提交的任务还没有执行完
-    # 线程池是不会停止工作的 shutdown之后再提交任务就不会执行而且会产生异常
+    print(f'耗時: {end - start}秒')
+    # shutdown也是非阻塞式的方法 但是如果已經提交的任務還沒有執行完
+    # 線程池是不會停止工作的 shutdown之後再提交任務就不會執行而且會產生異常
     pool.shutdown()
 
 

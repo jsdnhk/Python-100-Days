@@ -13,8 +13,8 @@ class Account(object):
         return self._balance
 
     def deposit(self, money):
-        # 当多个线程同时访问一个资源的时候 就有可能因为竞争资源导致资源的状态错误
-        # 被多个线程访问的资源我们通常称之为临界资源 对临界资源的访问需要加上保护
+        # 當多個線程同時訪問一個資源的時候 就有可能因爲競爭資源導致資源的狀態錯誤
+        # 被多個線程訪問的資源我們通常稱之爲臨界資源 對臨界資源的訪問需要加上保護
         if money > 0:
             self._lock.acquire()
             try:
@@ -44,7 +44,7 @@ def main():
         t.start()
     for t in tlist:
         t.join()
-    print('账户余额: %d元' % account.balance)
+    print('賬戶餘額: %d元' % account.balance)
 
 
 if __name__ == '__main__':

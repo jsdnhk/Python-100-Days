@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>成都机动车限行查询</title>
+		<title>成都機動車限行查詢</title>
 		<style>
 			#search {
 				width: 640px;
@@ -40,8 +40,8 @@
 	</head>
 	<body>
 		<div id="search">
-			<input type="text" id="carno" placeholder="请输入车牌号">
-			<input type="button" value="查询" onclick="showResult()">
+			<input type="text" id="carno" placeholder="請輸入車牌號">
+			<input type="button" value="查詢" onclick="showResult()">
 			<input type="button" value="清除" onclick="clearResult()">
 		</div>
 		<hr>
@@ -56,7 +56,7 @@
 			function showResult() {
 				var input = document.getElementById('carno');
 				var carNo = input.value;
-				var regex = /^[京津沪渝辽吉黑冀鲁豫晋陕甘闽粤桂川云贵苏浙皖湘鄂赣青新宁蒙藏琼][A-Z]\s*[0-9A-Z]{5}$/;
+				var regex = /^[京津滬渝遼吉黑冀魯豫晉陝甘閩粵桂川雲貴蘇浙皖湘鄂贛青新寧蒙藏瓊][A-Z]\s*[0-9A-Z]{5}$/;
 				if (regex.test(carNo)) {
 					var digitStr = lastDigit(carNo);
 					if (digitStr) {
@@ -68,10 +68,10 @@
 							p.innerHTML = carNo + '今日不限行<br>' + p.innerHTML;
 						}
 					} else {
-						p.innerHTML = carNo + '不是有效的车牌号<br>' + p.innerHTML; 
+						p.innerHTML = carNo + '不是有效的車牌號<br>' + p.innerHTML; 
 					}
 				} else {
-					p.innerHTML = carNo + '不是有效的车牌号<br>' + p.innerHTML; 
+					p.innerHTML = carNo + '不是有效的車牌號<br>' + p.innerHTML; 
 				}
 				input.value = '';
 			}

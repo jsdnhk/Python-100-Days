@@ -32,8 +32,8 @@
 			var img = document.querySelector('#container>img');
 			var images = document.querySelectorAll('#items img');
 			for (var i = 0; i < images.length; i += 1) {
-				// 事件回调函数在for循环的时候并没有执行所以也取不到循环变量i当前的值
-				// JavaScript是动态弱类型语言可以在运行时动态的添加(或删除)对象的属性
+				// 事件回調函數在for循環的時候並沒有執行所以也取不到循環變量i當前的值
+				// JavaScript是動態弱類型語言可以在運行時動態的添加(或刪除)對象的屬性
 				images[i].picture = 'img/picture-' + (i + 1) + '.jpg';
 				images[i].addEventListener('mouseover', function(evt) {
 					img.src = evt.target.picture;

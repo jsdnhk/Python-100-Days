@@ -1,10 +1,10 @@
 """
 
-使用tkinter创建GUI
-- 在窗口上制作动画
+使用tkinter創建GUI
+- 在窗口上製作動畫
 
 Version: 0.1
-Author: 骆昊
+Author: 駱昊
 Date: 2018-03-14
 
 """
@@ -13,7 +13,7 @@ import tkinter
 import time
 
 
-# 播放动画效果的函数
+# 播放動畫效果的函數
 def play_animation():
     canvas.move(oval, 2, 2)
     canvas.update()
@@ -24,7 +24,7 @@ x = 10
 y = 10
 top = tkinter.Tk()
 top.geometry('600x600')
-top.title('动画效果')
+top.title('動畫效果')
 top.resizable(False, False)
 top.wm_attributes('-topmost', 1)
 canvas = tkinter.Canvas(top, width=600, height=600, bd=0, highlightthickness=0)
@@ -35,5 +35,5 @@ top.update()
 play_animation()
 tkinter.mainloop()
 
-# 请思考如何让小球碰到屏幕的边界就弹回
-# 请思考如何用面向对象的编程思想对上面的代码进行封装
+# 請思考如何讓小球碰到屏幕的邊界就彈回
+# 請思考如何用面向對象的編程思想對上面的代碼進行封裝

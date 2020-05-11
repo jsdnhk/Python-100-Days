@@ -1,10 +1,10 @@
 """
-使用tkinter创建GUI
-- 使用画布绘图
-- 处理鼠标事件
+使用tkinter創建GUI
+- 使用畫布繪圖
+- 處理鼠標事件
 
 Version: 0.1
-Author: 骆昊
+Author: 駱昊
 Date: 2018-03-14
 """
 
@@ -20,13 +20,13 @@ def mouse_evt_handler(evt=None):
 
 
 top = tkinter.Tk()
-# 设置窗口尺寸
+# 設置窗口尺寸
 top.geometry('620x620')
-# 设置窗口标题
+# 設置窗口標題
 top.title('五子棋')
-# 设置窗口大小不可改变
+# 設置窗口大小不可改變
 top.resizable(False, False)
-# 设置窗口置顶
+# 設置窗口置頂
 top.wm_attributes('-topmost', 1)
 canvas = tkinter.Canvas(top, width=600, height=600, bd=0, highlightthickness=0)
 canvas.bind('<Button-1>', mouse_evt_handler)
@@ -38,4 +38,4 @@ canvas.create_rectangle(15, 15, 585, 585, outline='black', width=4)
 canvas.pack()
 tkinter.mainloop()
 
-# 请思考如何用面向对象的编程思想对上面的代码进行封装
+# 請思考如何用面向對象的編程思想對上面的代碼進行封裝

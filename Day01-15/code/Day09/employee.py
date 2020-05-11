@@ -1,13 +1,13 @@
 """
-抽象类 / 方法重写 / 多态
-实现一个工资结算系统 公司有三种类型的员工
-- 部门经理固定月薪12000元/月
-- 程序员按本月工作小时数每小时100元
-- 销售员1500元/月的底薪加上本月销售额5%的提成
-输入员工的信息 输出每位员工的月薪信息
+抽象類 / 方法重寫 / 多態
+實現一個工資結算系統 公司有三種類型的員工
+- 部門經理固定月薪12000元/月
+- 程序員按本月工作小時數每小時100元
+- 銷售員1500元/月的底薪加上本月銷售額5%的提成
+輸入員工的信息 輸出每位員工的月薪信息
 
 Version: 0.1
-Author: 骆昊
+Author: 駱昊
 Date: 2018-03-12
 """
 
@@ -30,9 +30,9 @@ class Employee(object, metaclass=ABCMeta):
 
 class Manager(Employee):
 
-    # 想一想: 如果不定义构造方法会怎么样
+    # 想一想: 如果不定義構造方法會怎麼樣
     def __init__(self, name):
-        # 想一想: 如果不调用父类构造器会怎么样
+        # 想一想: 如果不調用父類構造器會怎麼樣
         super().__init__(name)
 
     def get_salary(self):
@@ -64,12 +64,12 @@ class Salesman(Employee):
 
 
 if __name__ == '__main__':
-    emps = [Manager('武则天'), Programmer('狄仁杰'), Salesman('白元芳')]
+    emps = [Manager('武則天'), Programmer('狄仁傑'), Salesman('白元芳')]
     for emp in emps:
         if isinstance(emp, Programmer):
-            working_hour = int(input('请输入%s本月工作时间: ' % emp.name))
+            working_hour = int(input('請輸入%s本月工作時間: ' % emp.name))
             emp.set_working_hour(working_hour)
         elif isinstance(emp, Salesman):
-            sales = float(input('请输入%s本月销售额: ' % emp.name))
+            sales = float(input('請輸入%s本月銷售額: ' % emp.name))
             emp.set_sales(sales)
-        print('%s本月月薪为: ￥%.2f元' % (emp.name, emp.get_salary()))
+        print('%s本月月薪爲: ￥%.2f元' % (emp.name, emp.get_salary()))

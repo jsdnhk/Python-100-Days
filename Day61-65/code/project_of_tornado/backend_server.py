@@ -1,5 +1,5 @@
 """
-backend_server.py - 后台服务器
+backend_server.py - 後臺服務器
 """
 import asyncio
 import os
@@ -30,9 +30,9 @@ async def connect_mysql():
 
 
 def main():
-    # Tornado 5开始使用线程必须指定事件循环的策略否则无法启动线程
+    # Tornado 5開始使用線程必須指定事件循環的策略否則無法啓動線程
     asyncio.set_event_loop_policy(AnyThreadEventLoopPolicy())
-    # 启动通过WebSocket长连接发送数据的线程
+    # 啓動通過WebSocket長連接發送數據的線程
     threading.Thread(target=send_data, daemon=True, args=(5, )).start()
     app = tornado.web.Application(
         handlers=[

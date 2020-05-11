@@ -1,8 +1,8 @@
 """
-类型转换
+類型轉換
 
 Version: 0.1
-Author: 骆昊
+Author: 駱昊
 Date: 2018-02-27
 """
 

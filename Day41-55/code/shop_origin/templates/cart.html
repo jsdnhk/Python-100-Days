@@ -17,7 +17,7 @@
 	</head>
 	<body>
 		<div class="left">
-			<h1>购物车列表</h1>
+			<h1>購物車列表</h1>
 			<hr>
 		</div>
 		<div class="right">
@@ -26,10 +26,10 @@
 		{% if cart_items %}
 		<table style="clear: both;">
 			<tr>
-				<th>商品名称</th>
-				<th>商品单价</th>
-				<th>商品数量</th>
-				<th>商品总价</th>
+				<th>商品名稱</th>
+				<th>商品單價</th>
+				<th>商品數量</th>
+				<th>商品總價</th>
 				<th>操作</th>
 			</tr>
 			{% for item in cart_items %}
@@ -39,7 +39,7 @@
 				<td>{{ item.amount }}</td>
 				<td class="price">&yen;{{ item.total_price }}</td>
 				<td>
-					<a href="" class="del">删除</a>
+					<a href="" class="del">刪除</a>
 				</td>
 			</tr>
 			{% endfor %}
@@ -47,9 +47,9 @@
 				<td colspan="5" class="total price">&yen;{{ cart.total }}元</td>
 			</tr>
 		</table>
-		<a href="clear_cart" class="back">清空购物车</a>
+		<a href="clear_cart" class="back">清空購物車</a>
 		{% else %}
-		<h3 style="clear: both;">购物车中暂时没有商品!</h3>
+		<h3 style="clear: both;">購物車中暫時沒有商品!</h3>
 		{% endif %}
 	</body>
 </html>

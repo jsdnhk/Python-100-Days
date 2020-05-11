@@ -1,15 +1,15 @@
-/* 通配符选择器 */
+/* 通配符選擇器 */
 * {
 	margin: 0;
 	padding: 0;
 }
-/* 标签选择器 */
+/* 標籤選擇器 */
 h1 {
 	width: 960px;
 	height: 40px;
 	margin: 5px auto;
 }
-/* 类选择器 */
+/* 類選擇器 */
 .a {
 	background-color: red;
 }
@@ -47,7 +47,7 @@ h1 {
 .small {
 	font-size: 12px;
 }
-/* ID选择器 */
+/* ID選擇器 */
 #header, #footer {
 	width: 800px;
 	height: 120px;

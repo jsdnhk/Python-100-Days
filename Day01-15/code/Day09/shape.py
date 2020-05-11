@@ -1,12 +1,12 @@
 """
-继承的应用
-- 抽象类
+繼承的應用
+- 抽象類
 - 抽象方法
-- 方法重写
-- 多态
+- 方法重寫
+- 多態
 
 Version: 0.1
-Author: 骆昊
+Author: 駱昊
 Date: 2018-03-12
 """
 
@@ -37,7 +37,7 @@ class Circle(Shape):
         return pi * self._radius ** 2
 
     def __str__(self):
-        return '我是一个圆'
+        return '我是一個圓'
 
 
 class Rect(Shape):
@@ -53,12 +53,12 @@ class Rect(Shape):
         return self._width * self._height
 
     def __str__(self):
-        return '我是一个矩形'
+        return '我是一個矩形'
 
 
 if __name__ == '__main__':
     shapes = [Circle(5), Circle(3.2), Rect(3.2, 6.3)]
     for shape in shapes:
         print(shape)
-        print('周长:', shape.perimeter())
-        print('面积:', shape.area())
+        print('周長:', shape.perimeter())
+        print('面積:', shape.area())

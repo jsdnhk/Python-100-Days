@@ -9,30 +9,30 @@ def main():
     <html lang="en">
         <head>
             <meta charset="UTF-8">
-            <title>首页</title>
+            <title>首頁</title>
         </head>
         <body>
             <h1>Hello, world!</h1>
-            <p>这是一个<em>神奇</em>的网站！</p>
+            <p>這是一個<em>神奇</em>的網站！</p>
             <hr>
             <div>
-                <h2>这是一个例子程序</h2>
-                <p>静夜思</p>
-                <p class="foo">床前明月光</p>
+                <h2>這是一個例子程序</h2>
+                <p>靜夜思</p>
+                <p class="foo">牀前明月光</p>
                 <p id="bar">疑似地上霜</p>
-                <p class="foo">举头望明月</p>
-                <div><a href="http://www.baidu.com"><p>低头思故乡</p></a></div>
+                <p class="foo">舉頭望明月</p>
+                <div><a href="http://www.baidu.com"><p>低頭思故鄉</p></a></div>
             </div>
-            <a class="foo" href="http://www.qq.com">腾讯网</a>
+            <a class="foo" href="http://www.qq.com">騰訊網</a>
             <img src="./img/pretty-girl.png" alt="美女">
-            <img src="./img/hellokitty.png" alt="凯蒂猫">
+            <img src="./img/hellokitty.png" alt="凱蒂貓">
             <img src="/static/img/pretty-girl.png" alt="美女">
             <table>
                 <tr>
                     <th>姓名</th>
-                    <th>上场时间</th>
+                    <th>上場時間</th>
                     <th>得分</th>
-                    <th>篮板</th>
+                    <th>籃板</th>
                     <th>助攻</th>
                 </tr>
             </table>

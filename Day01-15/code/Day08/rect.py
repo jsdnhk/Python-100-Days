@@ -1,14 +1,14 @@
 """
-定义和使用矩形类
+定義和使用矩形類
 
 Version: 0.1
-Author: 骆昊
+Author: 駱昊
 Date: 2018-03-08
 """
 
 
 class Rect(object):
-    """矩形类"""
+    """矩形類"""
 
     def __init__(self, width=0, height=0):
         """初始化方法"""
@@ -16,20 +16,20 @@ class Rect(object):
         self.__height = height
 
     def perimeter(self):
-        """计算周长"""
+        """計算周長"""
         return (self.__width + self.__height) * 2
 
     def area(self):
-        """计算面积"""
+        """計算面積"""
         return self.__width * self.__height
 
     def __str__(self):
-        """矩形对象的字符串表达式"""
+        """矩形對象的字符串表達式"""
         return '矩形[%f,%f]' % (self.__width, self.__height)
 
     def __del__(self):
-        """析构器"""
-        print('销毁矩形对象')
+        """析構器"""
+        print('銷燬矩形對象')
 
 
 if __name__ == '__main__':

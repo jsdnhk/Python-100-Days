@@ -2,18 +2,18 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>表单的例子 - 注册</title>
+		<title>表單的例子 - 註冊</title>
 		<style>
-			/* 属性选择器 */
-			/* form input 后代选择器 */
-			/* form>input 儿子选择器 */
+			/* 屬性選擇器 */
+			/* form input 後代選擇器 */
+			/* form>input 兒子選擇器 */
 			form input[type=text], form input[type=password] {
 				border: none;
 				outline: none;
 				border-bottom: 1px dotted darkgray;
 			}
-			/* form~input 兄弟选择器 */
-			/* form+input 相邻兄弟选择器 */
+			/* form~input 兄弟選擇器 */
+			/* form+input 相鄰兄弟選擇器 */
 			form~p>input[type=text] {
 				outline: none;
 				border: 1px solid lightgray;
@@ -35,34 +35,34 @@
 	<body>
 		<figure>
 			<img src="images/bok-choi.jpg" alt="">
-			<figcaption>图1. 这是一个图片</figcaption>
+			<figcaption>圖1. 這是一個圖片</figcaption>
 		</figure>
 		<form action="" method="post" enctype="multipart/form-data">
 			<fieldset>
-				<legend>用户基本信息</legend>
+				<legend>用戶基本信息</legend>
 				<p>
-					用户名:
-					<input type="text" name="username" placeholder="用户名由6-20个字符构成" required>
+					用戶名:
+					<input type="text" name="username" placeholder="用戶名由6-20個字符構成" required>
 				</p>
 				<p>
-					密码：
+					密碼：
 					<input type="password" name="password" required>
 				</p>
 				<p>
-					确认密码：
+					確認密碼：
 					<input type="password" name="repassword" required>
 				</p>
 				<p>
-					性别：
+					性別：
 					<input type="radio" name="sex" value="1" checked>男
 					<input type="radio" name="sex" value="0">女
 				</p>
 				<p>
-					爱好：
-					<input type="checkbox" name="fav" value="阅读" checked>阅读
-					<input type="checkbox" name="fav" value="旅游">旅游
+					愛好：
+					<input type="checkbox" name="fav" value="閱讀" checked>閱讀
+					<input type="checkbox" name="fav" value="旅遊">旅遊
 					<input type="checkbox" name="fav" value="美食" checked>美食
-					<input type="checkbox" name="fav" value="运动">运动
+					<input type="checkbox" name="fav" value="運動">運動
 				</p>
 				<p>
 					省份：
@@ -70,7 +70,7 @@
 						<option value="110000">北京</option>
 						<option value="120000">天津</option>
 						<option value="310000">上海</option>
-						<option value="500000">重庆</option>
+						<option value="500000">重慶</option>
 						<option value="510000" selected>四川省</option>
 					</select>
 				</p>
@@ -80,22 +80,22 @@
 				</p>
 			</fieldset>
 			<fieldset id="">
-				<legend>用户附加信息</legend>
+				<legend>用戶附加信息</legend>
 				<p>
-					邮箱：
+					郵箱：
 					<input type="email" name="email" required>
 				</p>
 				<p>
-					头像：
+					頭像：
 					<input type="file" name="photo">
 				</p>
 				<p>
-					自我介绍：
+					自我介紹：
 					<textarea cols="30" rows="10" name="intro"></textarea>
 				</p>
 				<p>
-					<input class="button" type="submit" value="确认注册">
-					<input class="button" type="reset" value="重新填写">
+					<input class="button" type="submit" value="確認註冊">
+					<input class="button" type="reset" value="重新填寫">
 				</p>
 			</fieldset>
 		</form>

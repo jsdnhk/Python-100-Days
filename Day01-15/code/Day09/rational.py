@@ -1,8 +1,8 @@
 """
-运算符重载 - 自定义分数类
+運算符重載 - 自定義分數類
 
 Version: 0.1
-Author: 骆昊
+Author: 駱昊
 Date: 2018-03-12
 """
 
@@ -13,7 +13,7 @@ class Rational(object):
 
     def __init__(self, num, den=1):
         if den == 0:
-            raise ValueError('分母不能为0')
+            raise ValueError('分母不能爲0')
         self._num = num
         self._den = den
         self.normalize()

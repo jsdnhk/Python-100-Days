@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Vue入门</title>
+		<title>Vue入門</title>
 		<style>
 			/*
 			#emp {
@@ -35,26 +35,26 @@
 	</head>
 	<body>
 		<div id="app">
-			<h1>员工信息表</h1>
+			<h1>員工信息表</h1>
 			<hr>
 			<el-table v-loading="loading" :data="emps" stripe style="width: 100%">
-				<el-table-column prop="no" label="编号" width="180"></el-table-column>
+				<el-table-column prop="no" label="編號" width="180"></el-table-column>
 				<el-table-column prop="name" label="姓名" width="180"></el-table-column>
-				<el-table-column prop="job" label="职位"></el-table-column>
-				<el-table-column prop="sal" label="工资"></el-table-column>
-				<el-table-column prop="comm" label="补贴"></el-table-column>
-				<el-table-column prop="dept.name" label="所在部门"></el-table-column>
+				<el-table-column prop="job" label="職位"></el-table-column>
+				<el-table-column prop="sal" label="工資"></el-table-column>
+				<el-table-column prop="comm" label="補貼"></el-table-column>
+				<el-table-column prop="dept.name" label="所在部門"></el-table-column>
 			</el-table>
 			<!--
 			<table id="emp">
 				<thead>
 					<tr>
-						<th>编号</th>
+						<th>編號</th>
 						<th>姓名</th>
-						<th>职位</th>
-						<th>工资</th>
-						<th>补贴</th>
-						<th>所在部门</th>
+						<th>職位</th>
+						<th>工資</th>
+						<th>補貼</th>
+						<th>所在部門</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -70,8 +70,8 @@
 			</table>
 			-->
 			<div id="page">
-				<el-button type="primary" round @click="prevPage()">上一页</el-button>
-				<el-button type="primary" round @click="nextPage()">下一页</el-button>
+				<el-button type="primary" round @click="prevPage()">上一頁</el-button>
+				<el-button type="primary" round @click="nextPage()">下一頁</el-button>
 			</div>
 		</div>
 		<script src="https://unpkg.com/vue/dist/vue.min.js"></script>

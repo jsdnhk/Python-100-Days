@@ -1,13 +1,13 @@
 """
-函数的定义和使用 - 计算组合数C(7,3)
+函數的定義和使用 - 計算組合數C(7,3)
 
 Version: 0.1
-Author: 骆昊
+Author: 駱昊
 Date: 2018-03-05
 """
 
 
-# 将求阶乘的功能封装成一个函数
+# 將求階乘的功能封裝成一個函數
 def factorial(n):
     result = 1
     for num in range(1, n + 1):

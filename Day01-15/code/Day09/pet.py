@@ -24,7 +24,7 @@ class Cat(Pet):
 
 
 def main():
-    pets = [Dog('旺财'), Cat('凯蒂'), Dog('大黄')]
+    pets = [Dog('旺財'), Cat('凱蒂'), Dog('大黃')]
     for pet in pets:
         pet.make_voice()
 

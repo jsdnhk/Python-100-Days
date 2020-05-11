@@ -1,17 +1,17 @@
 """
-第一个Python程序 - hello, world!
-向伟大的Dennis M. Ritchie先生致敬
+第一個Python程序 - hello, world!
+向偉大的Dennis M. Ritchie先生致敬
 
 Version: 0.1
-Author: 骆昊
+Author: 駱昊
 Date: 2018-02-26
 
-请将该文件命名为hello.py
+請將該文件命名爲hello.py
 
-使用Windows的小伙伴可以在命令行提示下通过下面的命令运行该程序
+使用Windows的小夥伴可以在命令行提示下通過下面的命令運行該程序
 python hello.py
 
-对于使用Linux或macOS的小伙伴可以打开终端并键入下面的命令来运行程序
+對於使用Linux或macOS的小夥伴可以打開終端並鍵入下面的命令來運行程序
 python3 hello.py
 """
 

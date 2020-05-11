@@ -10,7 +10,7 @@ def index(request):
 
 
 class CartItem(object):
-    """购物车中的商品项"""
+    """購物車中的商品項"""
 
     def __init__(self, goods, amount=1):
         self.goods = goods
@@ -22,7 +22,7 @@ class CartItem(object):
 
 
 class ShoppingCart(object):
-    """购物车"""
+    """購物車"""
 
     def __init__(self):
         self.items = {}
@@ -55,17 +55,17 @@ class ShoppingCart(object):
 
 def add_to_cart(request, id):
     goods = Goods.objects.get(pk=id)
-    # 通过request对象的session属性可以获取到session
-    # session相当于是服务器端用来保存用户数据的一个字典
+    # 通過request對象的session屬性可以獲取到session
+    # session相當於是服務器端用來保存用戶數據的一個字典
     # session利用了Cookie保存sessionid
-    # 通过sessionid就可以获取与某个用户对应的会话(也就是用户数据)
-    # 如果在浏览器中清除了Cookie那么也就清除了sessionid
-    # 再次访问服务器时服务器会重新分配新的sessionid这也就意味着之前的用户数据无法找回
-    # 默认情况下Django的session被设定为持久会话而非浏览器续存期会话
-    # 通过SESSION_EXPIRE_AT_BROWSER_CLOSE和SESSION_COOKIE_AGE参数可以修改默认设定
-    # Django中的session是进行了持久化处理的因此需要设定session的序列化方式
-    # 1.6版开始Django默认的session序列化器是JsonSerializer
-    # 可以通过SESSION_SERIALIZER来设定其他的序列化器(例如PickleSerializer)
+    # 通過sessionid就可以獲取與某個用戶對應的會話(也就是用戶數據)
+    # 如果在瀏覽器中清除了Cookie那麼也就清除了sessionid
+    # 再次訪問服務器時服務器會重新分配新的sessionid這也就意味着之前的用戶數據無法找回
+    # 默認情況下Django的session被設定爲持久會話而非瀏覽器續存期會話
+    # 通過SESSION_EXPIRE_AT_BROWSER_CLOSE和SESSION_COOKIE_AGE參數可以修改默認設定
+    # Django中的session是進行了持久化處理的因此需要設定session的序列化方式
+    # 1.6版開始Django默認的session序列化器是JsonSerializer
+    # 可以通過SESSION_SERIALIZER來設定其他的序列化器(例如PickleSerializer)
     cart = request.session.get('cart', ShoppingCart())
     cart.add_item(CartItem(goods))
     request.session['cart'] = cart

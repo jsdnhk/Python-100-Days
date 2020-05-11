@@ -1,14 +1,14 @@
 from random import randint, sample
 
-# 初始化备选红色球
+# 初始化備選紅色球
 red_balls = [x for x in range(1, 34)]
-# 选出六个红色球
+# 選出六個紅色球
 selected_balls = sample(red_balls, 6)
-# 对红色球进行排序
+# 對紅色球進行排序
 selected_balls.sort()
-# 添加一个蓝色球
+# 添加一個藍色球
 selected_balls.append(randint(1, 16))
-# 输出选中的随机号码
+# 輸出選中的隨機號碼
 for index, ball in enumerate(selected_balls):
     print('%02d' % ball, end=' ')
     if index == len(selected_balls) - 2:

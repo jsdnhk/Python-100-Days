@@ -105,12 +105,12 @@
 			<div id="cart-header">
 				<div class="left w110 ml10">
 					<input id="selectAll" type="checkbox">
-					<label for="selectAll">全选</label>
+					<label for="selectAll">全選</label>
 				</div>
 				<div class="left w250">商品</div>
-				<div class="left w120 center">单价</div>
-				<div class="left w120 center">数量</div>
-				<div class="left w120 center">小计</div>
+				<div class="left w120 center">單價</div>
+				<div class="left w120 center">數量</div>
+				<div class="left w120 center">小計</div>
 				<div class="left w120 center">操作</div>
 			</div>
 			<div id="cart-items">
@@ -125,7 +125,7 @@
 					</div>
 					<div class="left w250">
 						<span>
-						海澜之家/Heilan Home春装商务白衬衫男修身HNCAD3A067Y 漂白(69) 漂
+						海瀾之家/Heilan Home春裝商務白襯衫男修身HNCAD3A067Y 漂白(69) 漂
 						</span>
 					</div>
 					<div class="left w120 center">&yen;<span class="price">138.00</span></div>
@@ -136,7 +136,7 @@
 					</div>
 					<div class="left w120 center">&yen;<span>138.00</span></div>
 					<div class="left w120 center">
-						<a href="javascript:void(0);">删除</a>
+						<a href="javascript:void(0);">刪除</a>
 					</div>
 				</div>
 				<div class="clear single-item">
@@ -150,7 +150,7 @@
 					</div>
 					<div class="left w250">
 						<span>
-						HLA海澜之家长袖衬衫男牛津纺休闲干净透气HNEAJ1E048A浅灰
+						HLA海瀾之家長袖襯衫男牛津紡休閒乾淨透氣HNEAJ1E048A淺灰
 						</span>
 					</div>
 					<div class="left w120 center">&yen;<span class="price">128.00</span></div>
@@ -161,7 +161,7 @@
 					</div>
 					<div class="left w120 center">&yen;<span>128.00</span></div>
 					<div class="left w120 center">
-						<a href="javascript:void(0);">删除</a>
+						<a href="javascript:void(0);">刪除</a>
 					</div>
 				</div>
 				<div class="clear single-item">
@@ -175,7 +175,7 @@
 					</div>
 					<div class="left w250">
 						<span>
-						HLA海澜之家牛津纺清新休闲衬衫2018春季新品质感柔软长袖衬衫男
+						HLA海瀾之家牛津紡清新休閒襯衫2018春季新品質感柔軟長袖襯衫男
 						</span>
 					</div>
 					<div class="left w120 center">&yen;<span class="price">99.00</span></div>
@@ -186,18 +186,18 @@
 					</div>
 					<div class="left w120 center">&yen;99.00</div>
 					<div class="left w120 center">
-						<a href="javascript:void(0);">删除</a>
+						<a href="javascript:void(0);">刪除</a>
 					</div>
 				</div>
 			</div>
 			<div id="cart-footer">
 				<div class="clear left">
-					<a id="clearSelected" href="javascript:void(0);">删除选中商品</a>
+					<a id="clearSelected" href="javascript:void(0);">刪除選中商品</a>
 				</div>
 				<div class="right">
-					<span>总共选中了<span id="totalCount">0</span>件商品</span>
-					<span>总计: <span id="totalPrice">&yen;0.00</span></span>
-					<button id="pay" class="big-button">去结算</button>
+					<span>總共選中了<span id="totalCount">0</span>件商品</span>
+					<span>總計: <span id="totalPrice">&yen;0.00</span></span>
+					<button id="pay" class="big-button">去結算</button>
 				</div>
 			</div>
 		</div>
@@ -253,14 +253,14 @@
 				});
 				
 				$('.single-item a').on('click', function(evt) {
-					if (confirm('确定要删除该商品吗?')) {
+					if (confirm('確定要刪除該商品嗎?')) {
 						$(evt.target).parent().parent().remove();
 						calcTotal();
 					}
 				});
 				
 				$('#clearSelected').on('click', function() {
-					if (confirm('确定要删除选中的商品吗?')) {
+					if (confirm('確定要刪除選中的商品嗎?')) {
 						$('.single-item').each(function() {
 							if ($(this).find('input:checkbox').prop('checked')) {
 								$(this).remove();

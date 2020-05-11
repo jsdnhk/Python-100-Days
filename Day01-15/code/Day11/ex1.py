@@ -1,8 +1,8 @@
 """
-异常机制 - 处理程序在运行时可能发生的状态
+異常機制 - 處理程序在運行時可能發生的狀態
 
 Version: 0.1
-Author: 骆昊
+Author: 駱昊
 Date: 2018-03-13
 """
 
@@ -14,8 +14,8 @@ while input_again:
         print('%d / %d = %f' % (a, b, a / b))
         input_again = False
     except ValueError:
-        print('请输入整数')
+        print('請輸入整數')
     except ZeroDivisionError:
-        print('除数不能为0')
-# 处理异常让代码不因异常而崩溃是一方面
-# 更重要的是可以通过对异常的处理让代码从异常中恢复过来
+        print('除數不能爲0')
+# 處理異常讓代碼不因異常而崩潰是一方面
+# 更重要的是可以通過對異常的處理讓代碼從異常中恢復過來

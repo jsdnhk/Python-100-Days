@@ -1,8 +1,8 @@
 """
-作用域问题
+作用域問題
 
 Version: 0.1
-Author: 骆昊
+Author: 駱昊
 Date: 2018-03-05
 """
 
@@ -27,7 +27,7 @@ foo2()
 
 
 def foo3():
-    b = 100     # 局部变量
+    b = 100     # 局部變量
     print(b)
 
 
@@ -37,7 +37,7 @@ print(b)
 
 def foo4():
     global b
-    b = 200     # 全局变量
+    b = 200     # 全局變量
     print(b)
 
 

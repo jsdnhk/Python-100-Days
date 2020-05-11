@@ -1,8 +1,8 @@
 """
-井字棋游戏
+井字棋遊戲
 
 Version: 0.1
-Author: 骆昊
+Author: 駱昊
 Date: 2018-03-06
 """
 
@@ -33,7 +33,7 @@ def main():
         os.system('clear')
         print_board(curr_board)
         while counter < 9:
-            move = input('轮到%s走棋, 请输入位置: ' % turn)
+            move = input('輪到%s走棋, 請輸入位置: ' % turn)
             if curr_board[move] == ' ':
                 counter += 1
                 curr_board[move] = turn

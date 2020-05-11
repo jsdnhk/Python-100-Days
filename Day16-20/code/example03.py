@@ -1,7 +1,7 @@
 """
-函数递归调用 - 函数直接或者间接的调用了自身
-1. 收敛条件
-2. 递归公式
+函數遞歸調用 - 函數直接或者間接的調用了自身
+1. 收斂條件
+2. 遞歸公式
 
 n! = n * (n-1)!
 f(n) = f(n-1) + f(n-2)
@@ -12,7 +12,7 @@ from time import perf_counter
 
 
 def fac(num):
-    """求阶乘"""
+    """求階乘"""
     assert num >= 0
     if num in (0, 1):
         return 1
@@ -20,7 +20,7 @@ def fac(num):
 
 
 def fib2(num):
-    """普通函数"""
+    """普通函數"""
     a, b = 1, 1
     for _ in range(num - 1):
         a, b = b, a + b
@@ -35,9 +35,9 @@ def fib3(num):
         yield a
 
 
-# 动态规划 - 保存可能进行重复运算的中间结果（空间换时间）
+# 動態規劃 - 保存可能進行重複運算的中間結果（空間換時間）
 def fib(num, results={}):
-    """斐波拉切数"""
+    """斐波拉切數"""
     assert num > 0
     if num in (1, 2):
         return 1
@@ -59,7 +59,7 @@ def timer():
 
 
 def main():
-    """主函数"""
+    """主函數"""
     # for val in fib3(20):
     #     print(val)
     # gen = fib3(20)

@@ -1,13 +1,13 @@
 """
-输入一个正整数判断它是不是素数
+輸入一個正整數判斷它是不是素數
 
 Version: 0.1
-Author: 骆昊
+Author: 駱昊
 Date: 2018-03-01
 """
 from math import sqrt
 
-num = int(input('请输入一个正整数: '))
+num = int(input('請輸入一個正整數: '))
 end = int(sqrt(num))
 is_prime = True
 for x in range(2, end + 1):
@@ -15,6 +15,6 @@ for x in range(2, end + 1):
         is_prime = False
         break
 if is_prime and num != 1:
-    print('%d是素数' % num)
+    print('%d是素數' % num)
 else:
-    print('%d不是素数' % num)
+    print('%d不是素數' % num)

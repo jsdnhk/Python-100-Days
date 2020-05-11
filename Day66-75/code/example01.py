@@ -8,7 +8,7 @@ import ssl
 from pymysql import Error
 
 
-# 通过指定的字符集对页面进行解码(不是每个网站都将字符集设置为utf-8)
+# 通過指定的字符集對頁面進行解碼(不是每個網站都將字符集設置爲utf-8)
 def decode_page(page_bytes, charsets=('utf-8',)):
     page_html = None
     for charset in charsets:
@@ -21,7 +21,7 @@ def decode_page(page_bytes, charsets=('utf-8',)):
     return page_html
 
 
-# 获取页面的HTML代码(通过递归实现指定次数的重试操作)
+# 獲取頁面的HTML代碼(通過遞歸實現指定次數的重試操作)
 def get_page_html(seed_url, *, retry_times=3, charsets=('utf-8',)):
     page_html = None
     try:
@@ -34,13 +34,13 @@ def get_page_html(seed_url, *, retry_times=3, charsets=('utf-8',)):
     return page_html
 
 
-# 从页面中提取需要的部分(通常是链接也可以通过正则表达式进行指定)
+# 從頁面中提取需要的部分(通常是鏈接也可以通過正則表達式進行指定)
 def get_matched_parts(page_html, pattern_str, pattern_ignore_case=re.I):
     pattern_regex = re.compile(pattern_str, pattern_ignore_case)
     return pattern_regex.findall(page_html) if page_html else []
 
 
-# 开始执行爬虫程序并对指定的数据进行持久化操作
+# 開始執行爬蟲程序並對指定的數據進行持久化操作
 def start_crawl(seed_url, match_pattern, *, max_depth=-1):
     conn = pymysql.connect(host='localhost', port=3306,
                            database='crawler', user='root',

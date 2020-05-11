@@ -1,7 +1,7 @@
 """
-面向对象
-枚举 - 一个变量的值只有有限个选择，最适合的类型就是枚举
-通过枚举我们可以定义符号常量，符号常量优于字面常量
+面向對象
+枚舉 - 一個變量的值只有有限個選擇，最適合的類型就是枚舉
+通過枚舉我們可以定義符號常量，符號常量優於字面常量
 """
 from enum import Enum, unique
 
@@ -10,7 +10,7 @@ import random
 
 @unique
 class Suite(Enum):
-    """花色（枚举）"""
+    """花色（枚舉）"""
     SPADE, HEART, CLUB, DIAMOND = range(4)
 
     def __lt__(self, other):
@@ -35,7 +35,7 @@ class Card():
 
 
 class Poker():
-    """扑克"""
+    """撲克"""
     
     def __init__(self):
         self.index = 0
@@ -49,7 +49,7 @@ class Poker():
         random.shuffle(self.cards)
 
     def deal(self):
-        """发牌"""
+        """發牌"""
         card = self.cards[self.index]
         self.index += 1
         return card
@@ -77,11 +77,11 @@ class Player():
 
 
 def main():
-    """主函数"""
+    """主函數"""
     poker = Poker()
     poker.shuffle()
     players = [
-        Player('东邪'), Player('西毒'), 
+        Player('東邪'), Player('西毒'), 
         Player('南帝'), Player('北丐')
     ]
     while poker.has_more:

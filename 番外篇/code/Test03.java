@@ -5,7 +5,7 @@ import java.util.Collections;
 class Test03 {
 
     /**
-     * 产生[min, max)范围的随机整数
+     * 產生[min, max)範圍的隨機整數
      */
     public static int randomInt(int min, int max) {
         return (int) (Math.random() * (max - min) + min);

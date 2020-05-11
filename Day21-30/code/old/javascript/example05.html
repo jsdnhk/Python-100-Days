@@ -37,20 +37,20 @@
 			var one = document.querySelector('#one');
 			var two = document.querySelector('#two');
 			var three = document.querySelector('#three');
-			// addEventListener方法的第一个参数是事件名
-			// 第二个参数是事件发生时需要执行的回调函数
-			// 第三个参数是一个布尔值 
-			// 如果是true表示事件捕获 - 从外层向内层传递事件
-			// 如果是false表示事件冒泡 - 从内存向外层传递事件
-			// 一般情况下事件处理的方式都是事件冒泡（默认行为）
-			// 如果想阻止事件的传播行为可以调用事件对象的stopPropagation方法
+			// addEventListener方法的第一個參數是事件名
+			// 第二個參數是事件發生時需要執行的回調函數
+			// 第三個參數是一個布爾值 
+			// 如果是true表示事件捕獲 - 從外層向內層傳遞事件
+			// 如果是false表示事件冒泡 - 從內存向外層傳遞事件
+			// 一般情況下事件處理的方式都是事件冒泡（默認行爲）
+			// 如果想阻止事件的傳播行爲可以調用事件對象的stopPropagation方法
 			one.addEventListener('click', function() {
 				window.alert('I am one!');
 			});
 			two.addEventListener('click', function() {
 				window.alert('I am two!');
 			});
-			// 事件回调函数中的第一个参数是事件对象（封装了和事件相关的信息）
+			// 事件回調函數中的第一個參數是事件對象（封裝了和事件相關的信息）
 			three.addEventListener('click', function(evt) {
 				window.alert('I am three!');
 				evt.stopPropagation();

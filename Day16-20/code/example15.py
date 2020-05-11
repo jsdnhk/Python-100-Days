@@ -1,6 +1,6 @@
 """
 迭代器 - __iter__ / __next__
-itertools - 生成可迭代序列的工具模块
+itertools - 生成可迭代序列的工具模塊
 """
 import itertools
 
@@ -8,7 +8,7 @@ from math import sqrt
 
 
 def is_prime(num):
-    """判断素数"""
+    """判斷素數"""
     for factor in range(2, int(sqrt(num)) + 1):
         if num % factor == 0:
             return False
@@ -16,7 +16,7 @@ def is_prime(num):
 
 
 class PrimeIter(object):
-    """素数迭代器"""
+    """素數迭代器"""
 
     def __init__(self, min_value, max_value):
         assert 2 <= min_value <= max_value
@@ -36,7 +36,7 @@ class PrimeIter(object):
 
 
 class FibIter(object):
-    """斐波那契数迭代器"""
+    """斐波那契數迭代器"""
     
     def __init__(self, num):
         self.num = num
@@ -59,7 +59,7 @@ def main():
     #     print(val)
     # for val in itertools.combinations('ABCDE', 3):
     #     print(val)
-    # for val in itertools.product('黑红梅方', range(1, 14)):
+    # for val in itertools.product('黑紅梅方', range(1, 14)):
     #     print(val)
     # fib_iter = FibIter(20)
     # print('===>', next(fib_iter))

@@ -1,5 +1,5 @@
 """
-example07.py - 将非异步的三方库封装为异步调用
+example07.py - 將非異步的三方庫封裝爲異步調用
 """
 import asyncio
 import concurrent
@@ -46,7 +46,7 @@ class HomeHandler(tornado.web.RequestHandler):
                 if cursor.rowcount == 0:
                     self.finish(json.dumps({
                         'code': 20001,
-                        'mesg': f'没有编号为{no}的部门'
+                        'mesg': f'沒有編號爲{no}的部門'
                     }))
                     return
                 row = cursor.fetchone()
@@ -71,7 +71,7 @@ class HomeHandler(tornado.web.RequestHandler):
         except pymysql.MySQLError:
             self.finish(json.dumps({
                 'code': 20002,
-                'mesg': '添加部门失败请确认部门信息'
+                'mesg': '添加部門失敗請確認部門信息'
             }))
         else:
             self.set_status(201)

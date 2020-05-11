@@ -2,13 +2,13 @@
 字符串常用操作
 
 Version: 0.1
-Author: 骆昊
+Author: 駱昊
 Date: 2018-03-19
 """
 
 import pyperclip
 
-# 转义字符
+# 轉義字符
 print('My brother\'s name is \'007\'')
 # 原始字符串
 print(r'My brother\'s name is \'007\'')
@@ -18,15 +18,15 @@ print('he' in str)
 print('her' in str)
 # 字符串是否只包含字母
 print(str.isalpha())
-# 字符串是否只包含字母和数字
+# 字符串是否只包含字母和數字
 print(str.isalnum())
-# 字符串是否只包含数字
+# 字符串是否只包含數字
 print(str.isdecimal())
 
 print(str[0:5].isalpha())
 print(str[5:8].isdecimal())
 
-list = ['床前明月光', '疑是地上霜', '举头望明月', '低头思故乡']
+list = ['牀前明月光', '疑是地上霜', '舉頭望明月', '低頭思故鄉']
 print('-'.join(list))
 sentence = 'You go your way I will go mine'
 words_list = sentence.split()
@@ -36,7 +36,7 @@ print(email)
 print(email.strip())
 print(email.lstrip())
 
-# 将文本放入系统剪切板中
-pyperclip.copy('老虎不发猫你当我病危呀')
-# 从系统剪切板获得文本
+# 將文本放入系統剪切板中
+pyperclip.copy('老虎不發貓你當我病危呀')
+# 從系統剪切板獲得文本
 # print(pyperclip.paste())

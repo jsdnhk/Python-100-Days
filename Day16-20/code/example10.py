@@ -1,6 +1,6 @@
 """
-装饰类的装饰器 - 单例模式 - 一个类只能创建出唯一的对象
-上下文语法：
+裝飾類的裝飾器 - 單例模式 - 一個類只能創建出唯一的對象
+上下文語法：
 __enter__ / __exit__
 """
 import threading
@@ -9,7 +9,7 @@ from functools import wraps
 
 
 def singleton(cls):
-    """单例装饰器"""
+    """單例裝飾器"""
     instances = {}
     lock = threading.Lock()
 
@@ -37,8 +37,8 @@ class President():
 
 def main():
     print(President.__name__)
-    p1 = President('特朗普', '美国')
-    p2 = President('奥巴马', '美国')
+    p1 = President('特朗普', '美國')
+    p2 = President('奧巴馬', '美國')
     print(p1 == p2)
     print(p1)
     print(p2)

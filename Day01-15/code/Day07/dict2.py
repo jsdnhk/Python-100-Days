@@ -2,13 +2,13 @@
 字典的常用操作
 
 Version: 0.1
-Author: 骆昊
+Author: 駱昊
 Date: 2018-03-06
 """
 
 
 def main():
-    stu = {'name': '骆昊', 'age': 38, 'gender': True}
+    stu = {'name': '駱昊', 'age': 38, 'gender': True}
     print(stu)
     print(stu.keys())
     print(stu.values())

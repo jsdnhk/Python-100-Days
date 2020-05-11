@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>成都机动车限行查询</title>
+		<title>成都機動車限行查詢</title>
 		<style>
 			#search {
 				width: 640px;
@@ -40,8 +40,8 @@
 	</head>
 	<body>
 		<div id="search">
-			<input type="text" id="carno" placeholder="请输入车牌号">
-			<input type="button" value="查询" onclick="showResult()">
+			<input type="text" id="carno" placeholder="請輸入車牌號">
+			<input type="button" value="查詢" onclick="showResult()">
 			<input type="button" value="清除" onclick="clearResult()">
 		</div>
 		<hr>
@@ -49,7 +49,7 @@
 		<script>
 			const carnoInput = document.getElementById('carno')
 			const result = document.getElementById('result')
-			const pattern = /^[京津沪渝辽吉黑冀鲁豫晋陕甘闽粤桂川云贵苏浙皖湘鄂赣青新宁蒙藏琼][A-Z]\s*[0-9A-Z]{5}$/i
+			const pattern = /^[京津滬渝遼吉黑冀魯豫晉陝甘閩粵桂川雲貴蘇浙皖湘鄂贛青新寧蒙藏瓊][A-Z]\s*[0-9A-Z]{5}$/i
 			
 			function clearResult() {
 				carnoInput.value = ''
@@ -63,7 +63,7 @@
 					if (num) {
 						let day = new Date().getDay()
 						if (day == 0 || day == 6) {
-							result.textContent = '节假日不限行'
+							result.textContent = '節假日不限行'
 						} else if (num % 5 == day || num % 5 == day - 5) {
 							result.textContent = carno + '今日限行'
 						} else {
@@ -72,7 +72,7 @@
 						return
 					}
 				}
-				alert('请输入有效的车牌号')
+				alert('請輸入有效的車牌號')
 			}
 			
 			function getLastDigit(carno) {

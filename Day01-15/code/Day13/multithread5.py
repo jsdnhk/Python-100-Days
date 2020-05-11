@@ -1,8 +1,8 @@
 """
-多个线程共享数据 - 没有锁的情况
+多個線程共享數據 - 沒有鎖的情況
 
 Version: 0.1
-Author: 骆昊
+Author: 駱昊
 Date: 2018-03-20
 """
 
@@ -17,14 +17,14 @@ class Account(object):
         self._lock = Lock()
 
     def deposit(self, money):
-        # 先获取锁才能执行后续的代码
+        # 先獲取鎖才能執行後續的代碼
         self._lock.acquire()
         try:
             new_balance = self._balance + money
             sleep(0.01)
             self._balance = new_balance
         finally:
-            # 这段代码放在finally中保证释放锁的操作一定要执行
+            # 這段代碼放在finally中保證釋放鎖的操作一定要執行
             self._lock.release()
 
     @property
@@ -46,15 +46,15 @@ class AddMoneyThread(Thread):
 def main():
     account = Account()
     threads = []
-    # 创建100个存款的线程向同一个账户中存钱
+    # 創建100個存款的線程向同一個賬戶中存錢
     for _ in range(100):
         t = AddMoneyThread(account, 1)
         threads.append(t)
         t.start()
-    # 等所有存款的线程都执行完毕∫
+    # 等所有存款的線程都執行完畢∫
     for t in threads:
         t.join()
-    print('账户余额为: ￥%d元' % account.balance)
+    print('賬戶餘額爲: ￥%d元' % account.balance)
 
 
 if __name__ == '__main__':

@@ -1,8 +1,8 @@
 """
-输入非负整数n计算n!
+輸入非負整數n計算n!
 
 Version: 0.1
-Author: 骆昊
+Author: 駱昊
 Date: 2018-03-01
 """
 

@@ -1,8 +1,8 @@
 """
-双色球随机选号程序
+雙色球隨機選號程序
 
 Version: 0.1
-Author: 骆昊
+Author: 駱昊
 Date: 2018-03-06
 """
 
@@ -11,7 +11,7 @@ from random import randrange, randint, sample
 
 def display(balls):
     """
-    输出列表中的双色球号码
+    輸出列表中的雙色球號碼
     """
     for index, ball in enumerate(balls):
         if index == len(balls) - 1:
@@ -22,7 +22,7 @@ def display(balls):
 
 def random_select():
     """
-    随机选择一组号码
+    隨機選擇一組號碼
     """
     red_balls = [x for x in range(1, 34)]
     selected_balls = []
@@ -30,8 +30,8 @@ def random_select():
         index = randrange(len(red_balls))
         selected_balls.append(red_balls[index])
         del red_balls[index]
-    # 上面的for循环也可以写成下面这行代码
-    # sample函数是random模块下的函数
+    # 上面的for循環也可以寫成下面這行代碼
+    # sample函數是random模塊下的函數
     # selected_balls = sample(red_balls, 6)
     selected_balls.sort()
     selected_balls.append(randint(1, 16))
@@ -39,7 +39,7 @@ def random_select():
 
 
 def main():
-    n = int(input('机选几注: '))
+    n = int(input('機選幾注: '))
     for _ in range(n):
         display(random_select())
 

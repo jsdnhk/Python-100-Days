@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>双色球随机选号</title>
+		<title>雙色球隨機選號</title>
 		<style>
 			p {
 				width: 100px;
@@ -23,10 +23,10 @@
 		</style>
 	</head>
 	<body>
-		<!-- 浏览器中的JavaScript包含以下三样内容 -->
-		<!-- ECMAScript - ES6 - 核心语法 -->
-		<!-- BOM - 浏览器对象模型 - window -->
-		<!-- DOM - 文档对象模型 - document -->
+		<!-- 瀏覽器中的JavaScript包含以下三樣內容 -->
+		<!-- ECMAScript - ES6 - 核心語法 -->
+		<!-- BOM - 瀏覽器對象模型 - window -->
+		<!-- DOM - 文檔對象模型 - document -->
 		<script>
 			function outputBall(num, color='red') {
 				document.write(`<p class="${color}">`)
@@ -44,10 +44,10 @@
 					selectedBalls.push(num)
 				}
 			}
-			// 给红色球排序 - 需要传入一个匿名函数给出比较元素的规则
-			// ES6开始支持使用箭头函数(Lambda函数 - 匿名函数)
+			// 給紅色球排序 - 需要傳入一個匿名函數給出比較元素的規則
+			// ES6開始支持使用箭頭函數(Lambda函數 - 匿名函數)
 			selectedBalls.sort((x, y) => x - y)
-			// 代码有很多种坏味道 重复是最坏的一种 - Martin Fowler
+			// 代碼有很多種壞味道 重複是最壞的一種 - Martin Fowler
 			selectedBalls.forEach(item => outputBall(item))
 			let num = parseInt(Math.random() * 16 + 1)
 			outputBall(num, 'blue')

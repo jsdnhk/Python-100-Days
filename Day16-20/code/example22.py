@@ -1,7 +1,7 @@
 """
-多进程和进程池的使用
-多线程因为GIL的存在不能够发挥CPU的多核特性
-对于计算密集型任务应该考虑使用多进程
+多進程和進程池的使用
+多線程因爲GIL的存在不能夠發揮CPU的多核特性
+對於計算密集型任務應該考慮使用多進程
 time python3 example22.py
 real    0m11.512s
 user    0m39.319s
@@ -28,7 +28,7 @@ PRIMES = [
 
 
 def is_prime(n):
-    """判断素数"""
+    """判斷素數"""
     if n % 2 == 0:
         return False
 
@@ -40,7 +40,7 @@ def is_prime(n):
 
 
 def main():
-    """主函数"""
+    """主函數"""
     with concurrent.futures.ProcessPoolExecutor() as executor:
         for number, prime in zip(PRIMES, executor.map(is_prime, PRIMES)):
             print('%d is prime: %s' % (number, prime))

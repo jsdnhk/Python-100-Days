@@ -1,5 +1,5 @@
 """
-打印各种三角形图案
+打印各種三角形圖案
 
 *
 **
@@ -20,11 +20,11 @@
 *********
 
 Version: 0.1
-Author: 骆昊
+Author: 駱昊
 Date: 2018-03-01
 """
 
-row = int(input('请输入行数: '))
+row = int(input('請輸入行數: '))
 for i in range(row):
     for _ in range(i + 1):
         print('*', end='')

@@ -1,7 +1,7 @@
 """
-多个线程竞争一个资源 - 保护临界资源 - 锁（Lock/RLock）
-多个线程竞争多个资源（线程数>资源数） - 信号量（Semaphore）
-多个线程的调度 - 暂停线程执行/唤醒等待中的线程 - Condition
+多個線程競爭一個資源 - 保護臨界資源 - 鎖（Lock/RLock）
+多個線程競爭多個資源（線程數>資源數） - 信號量（Semaphore）
+多個線程的調度 - 暫停線程執行/喚醒等待中的線程 - Condition
 """
 from concurrent.futures import ThreadPoolExecutor
 from random import randint
@@ -11,7 +11,7 @@ import threading
 
 
 class Account():
-    """银行账户"""
+    """銀行賬戶"""
 
     def __init__(self, balance=0):
         self.balance = balance
@@ -19,7 +19,7 @@ class Account():
         self.condition = threading.Condition(lock)
 
     def withdraw(self, money):
-        """取钱"""
+        """取錢"""
         with self.condition:
             while money > self.balance:
                 self.condition.wait()
@@ -28,7 +28,7 @@ class Account():
             self.balance = new_balance
 
     def deposit(self, money):
-        """存钱"""
+        """存錢"""
         with self.condition:
             new_balance = self.balance + money
             sleep(0.001)

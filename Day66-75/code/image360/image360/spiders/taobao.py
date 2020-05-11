@@ -15,7 +15,7 @@ class TaobaoSpider(scrapy.Spider):
     def start_requests(self):
         base_url = 'https://s.taobao.com/search?'
         params = {}
-        for keyword in ['ipad', 'iphone', '小米手机']:
+        for keyword in ['ipad', 'iphone', '小米手機']:
             params['q'] = keyword
             for page in range(10):
                 params['s'] = page * 44

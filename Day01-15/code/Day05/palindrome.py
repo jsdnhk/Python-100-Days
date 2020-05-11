@@ -1,13 +1,13 @@
 """
-判断输入的正整数是不是回文数
-回文数是指将一个正整数从左往右排列和从右往左排列值一样的数
+判斷輸入的正整數是不是迴文數
+迴文數是指將一個正整數從左往右排列和從右往左排列值一樣的數
 
 Version: 0.1
-Author: 骆昊
+Author: 駱昊
 Date: 2018-03-02
 """
 
-num = int(input('请输入一个正整数: '))
+num = int(input('請輸入一個正整數: '))
 temp = num
 num2 = 0
 while temp > 0:
@@ -15,6 +15,6 @@ while temp > 0:
     num2 += temp % 10
     temp //= 10
 if num == num2:
-    print('%d是回文数' % num)
+    print('%d是迴文數' % num)
 else:
-    print('%d不是回文数' % num)
+    print('%d不是迴文數' % num)

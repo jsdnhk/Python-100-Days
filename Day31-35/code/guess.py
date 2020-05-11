@@ -6,13 +6,13 @@ from random import randint
 def main():
     answer = randint(1, 100)
     while True:
-        number = int(input('请输入: '))
+        number = int(input('請輸入: '))
         if number < answer:
-            print('大一点')
+            print('大一點')
         elif number > answer:
-            print('小一点')
+            print('小一點')
         else:
-            print('恭喜你猜对了!')
+            print('恭喜你猜對了!')
             break
 
 

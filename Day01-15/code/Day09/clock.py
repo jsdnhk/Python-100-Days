@@ -2,7 +2,7 @@ from time import time, localtime, sleep
 
 
 class Clock(object):
-    """数字时钟"""
+    """數字時鐘"""
 
     def __init__(self, hour=0, minute=0, second=0):
         self._hour = hour
@@ -27,7 +27,7 @@ class Clock(object):
                     self._hour = 0
 
     def show(self):
-        """显示时间"""
+        """顯示時間"""
         return '%02d:%02d:%02d' % \
                (self._hour, self._minute, self._second)
 

@@ -1,21 +1,21 @@
 <link rel="stylesheet" type="text/css" href="bulma.css">
 
 <div id="app">
-	<h1>库存信息</h1>
+	<h1>庫存信息</h1>
 	<hr>
 	<ul>
 		<li v-for="product in products">
 			{{ product.name }} - 
 			<input type="number" v-model.number="product.quantity" min="0">
 			<span v-if="product.quantity === 0">
-				已经售罄
+				已經售罄
 			</span>
 			<button @click="product.quantity += 1">
-				增加库存
+				增加庫存
 			</button>
 		</li>
 	</ul>
-	<h2>库存总量：{{ totalQuantity }}台</h2>
+	<h2>庫存總量：{{ totalQuantity }}臺</h2>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
@@ -25,7 +25,7 @@
 		data: {
 			products: [
 				{"id": 1, "name": "iPhone X", "quantity": 20},
-				{"id": 2, "name": "华为 Mate20", "quantity": 0},
+				{"id": 2, "name": "華爲 Mate20", "quantity": 0},
 				{"id": 3, "name": "小米 Mix3", "quantity": 50}
 			]
 		},

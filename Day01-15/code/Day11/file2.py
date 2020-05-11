@@ -1,12 +1,12 @@
 """
-读取圆周率文件判断其中是否包含自己的生日
+讀取圓周率文件判斷其中是否包含自己的生日
 
 Version: 0.1
-Author: 骆昊
+Author: 駱昊
 Date: 2018-03-13
 """
 
-birth = input('请输入你的生日: ')
+birth = input('請輸入你的生日: ')
 with open('pi_million_digits.txt') as f:
     lines = f.readlines()
     pi_string = ''

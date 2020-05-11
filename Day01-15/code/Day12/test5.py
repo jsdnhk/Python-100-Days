@@ -1,12 +1,12 @@
 """
-不良内容过滤
+不良內容過濾
 """
 import re
 
 
 def main():
-    sentence = '你丫是傻叉吗? 我操你大爷的. Fuck you.'
-    purified = re.sub('[操肏艹]|fuck|shit|傻[比屄逼叉缺吊屌]|煞笔',
+    sentence = '你丫是傻叉嗎? 我操你大爺的. Fuck you.'
+    purified = re.sub('[操肏艹]|fuck|shit|傻[比屄逼叉缺吊屌]|煞筆',
                       '*', sentence, flags=re.IGNORECASE)
     print(purified)
 

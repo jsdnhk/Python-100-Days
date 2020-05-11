@@ -1,10 +1,10 @@
 """
-属性的使用
-- 访问器/修改器/删除器
-- 使用__slots__对属性加以限制
+屬性的使用
+- 訪問器/修改器/刪除器
+- 使用__slots__對屬性加以限制
 
 Version: 0.1
-Author: 骆昊
+Author: 駱昊
 Date: 2018-03-12
 """
 
@@ -40,7 +40,7 @@ class Car(object):
         self._max_speed = max_speed
 
     def __str__(self):
-        return 'Car: [品牌=%s, 最高时速=%d]' % (self._brand, self._max_speed)
+        return 'Car: [品牌=%s, 最高時速=%d]' % (self._brand, self._max_speed)
 
 
 car = Car('QQ', 120)
@@ -49,15 +49,15 @@ print(car)
 # car.max_speed = -100
 car.max_speed = 320
 car.brand = "Benz"
-# 使用__slots__属性限制后下面的代码将产生异常
+# 使用__slots__屬性限制後下面的代碼將產生異常
 # car.current_speed = 80
 print(car)
-# 如果提供了删除器可以执行下面的代码
+# 如果提供了刪除器可以執行下面的代碼
 # del car.brand
-# 属性的实现
+# 屬性的實現
 print(Car.brand)
 print(Car.brand.fget)
 print(Car.brand.fset)
 print(Car.brand.fdel)
-# 通过上面的代码帮助学生理解之前提到的包装器的概念
-# Python中有很多类似的语法糖后面还会出现这样的东西
+# 通過上面的代碼幫助學生理解之前提到的包裝器的概念
+# Python中有很多類似的語法糖後面還會出現這樣的東西

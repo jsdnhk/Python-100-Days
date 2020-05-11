@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Goods(models.Model):
-    """商品模型类"""
+    """商品模型類"""
 
     id = models.AutoField(primary_key=True, db_column='gid')
     name = models.CharField(max_length=50, db_column='gname')

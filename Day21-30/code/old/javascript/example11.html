@@ -5,16 +5,16 @@
 		<title></title>
 	</head>
 	<body>
-		<button id="ok">换一组</button>
+		<button id="ok">換一組</button>
 		<div id="container"></div>
 		<!-- HTML: Hyper-Text Markup Language -->
 		<!-- XML: eXtensible Markup Language -->
-		<!-- XML最为重要的用途是在两个异构的系统之间交换数据 -->
-		<!-- 现在这项功能基本上被JSON和YAML格式替代了 -->
+		<!-- XML最爲重要的用途是在兩個異構的系統之間交換數據 -->
+		<!-- 現在這項功能基本上被JSON和YAML格式替代了 -->
 		<!-- Ajax: Asynchronous JavaScript and XML -->
-		<!-- 通过JavaScript代码向服务器发起异步请求并获得数据 -->
-		<!-- 异步请求：在不中断用户体验的前提下向服务器发出请求 -->
-		<!-- 获得数据后可以通过DOM操作对页面进行局部刷新加载服务器返回的数据 -->
+		<!-- 通過JavaScript代碼向服務器發起異步請求並獲得數據 -->
+		<!-- 異步請求：在不中斷用戶體驗的前提下向服務器發出請求 -->
+		<!-- 獲得數據後可以通過DOM操作對頁面進行局部刷新加載服務器返回的數據 -->
 		<script>
 			(function() {
 				var page = 0;
@@ -22,21 +22,21 @@
 				var div = document.getElementById('container');
 				var button = document.getElementById('ok');
 				button.addEventListener('click', function() {
-					// 1. 创建异步请求对象
+					// 1. 創建異步請求對象
 					var xhr = new XMLHttpRequest();
 					if (xhr) {
 						page += 1
 						var url = 'http://api.tianapi.com/meinv/?key=772a81a51ae5c780251b1f98ea431b84&num=10&page=' + page;
-						// 2. 配置异步请求
+						// 2. 配置異步請求
 						xhr.open('get', url, true);
-						// 3. 绑定事件回调函数（服务器成功响应后要干什么）
+						// 3. 綁定事件回調函數（服務器成功響應後要幹什麼）
 						xhr.onreadystatechange = function() {
 							if (xhr.readyState == 4 && xhr.status == 200) {
 								div.innerHTML = '';
-								// 5. 解析服务器返回的JSON格式的数据
+								// 5. 解析服務器返回的JSON格式的數據
 								var jsonObj = JSON.parse(xhr.responseText);
 								var array = jsonObj.newslist;
-								// 6. 通过DOM操作实现页面的局部刷新
+								// 6. 通過DOM操作實現頁面的局部刷新
 								for (var i = 0; i < array.length; i += 1) {
 									var img = document.createElement('img');
 									img.src = array[i].picUrl;
@@ -45,10 +45,10 @@
 								}
 							}
 						};
-						// 4. 发出请求
+						// 4. 發出請求
 						xhr.send();
 					} else {
-						alert('使用垃圾浏览器还想看美女，做梦！');
+						alert('使用垃圾瀏覽器還想看美女，做夢！');
 					}
 				});
 			})();

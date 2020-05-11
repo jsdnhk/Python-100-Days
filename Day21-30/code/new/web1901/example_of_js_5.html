@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>类和对象</title>
+		<title>類和對象</title>
 	</head>
 	<body>
 		<script>
@@ -16,19 +16,19 @@
 				}
 				watchAv() {
 					if (this.age < 18) {
-						alert(`${this.name}只能看《熊出没》`)
+						alert(`${this.name}只能看《熊出沒》`)
 					} else {
-						alert(`${this.name}正在观看岛国爱情动作片`)
+						alert(`${this.name}正在觀看島國愛情動作片`)
 					}
 				}
 			}
 			
-			let person = new Person('骆昊', 39)
-			person.eat('蛋炒饭')
-			let person2 = new Person('王大锤', 15)
+			let person = new Person('駱昊', 39)
+			person.eat('蛋炒飯')
+			let person2 = new Person('王大錘', 15)
 			person2.watchAv()
 			
-			// 构造器函数
+			// 構造器函數
 			/*
 			function Person(name, age) {
 				this.name = name
@@ -39,36 +39,36 @@
 			}
 			Person.prototype.watchAv = function() {
 				if (this.age < 18) {
-					alert(this.name + '只能看《熊出没》')
+					alert(this.name + '只能看《熊出沒》')
 				} else {
-					alert(this.name + '正在观看岛国爱情动作片')
+					alert(this.name + '正在觀看島國愛情動作片')
 				}
 			}
-			let person = new Person('骆昊', 39)
-			person.eat('蛋炒饭')
-			let person2 = new Person('王大锤', 15)
+			let person = new Person('駱昊', 39)
+			person.eat('蛋炒飯')
+			let person2 = new Person('王大錘', 15)
 			person2.watchAv()
 			*/
 			
 			// JSON - JavaScript Object Notation
-			// JavaScript对象表达式 - 创建对象的字面量语法
+			// JavaScript對象表達式 - 創建對象的字面量語法
 			/*
 			const person = {
-				name: '骆昊',
+				name: '駱昊',
 				age: 39,
 				eat: function(food) {
 					alert(this.name + '正在吃' + food)
 				},
 				watchAv: function() {
 					if (this.age < 18) {
-						alert(this.name + '只能看《熊出没》')
+						alert(this.name + '只能看《熊出沒》')
 					} else {
-						alert(this.name + '正在观看岛国爱情动作片')
+						alert(this.name + '正在觀看島國愛情動作片')
 					}
 				}
 			}
 			// person.age = 15
-			person.eat('蛋炒饭')
+			person.eat('蛋炒飯')
 			person.watchAv()
 			*/
 		</script>

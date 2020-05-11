@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>猜数字</title>
+		<title>猜數字</title>
 	</head>
 	<body>
 		<script>
@@ -11,17 +11,17 @@
 			var yourInput
 			do {
 				counter += 1
-				yourInput = prompt('请输入你猜的数字: ')
+				yourInput = prompt('請輸入你猜的數字: ')
 				if (yourInput > answer) {
-					alert('小一点')
+					alert('小一點')
 				} else if (yourInput < answer) {
-					alert('大一点')
+					alert('大一點')
 				} else {
-					alert('恭喜你猜对了')
+					alert('恭喜你猜對了')
 				}
 			} while (answer != yourInput)
 			if (counter > 7) {
-				alert('智商余额不足')
+				alert('智商餘額不足')
 			}
 		</script>
 	</body>

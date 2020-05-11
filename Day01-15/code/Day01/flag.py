@@ -1,11 +1,11 @@
 """
-用Python的turtle模块绘制国旗
+用Python的turtle模塊繪製國旗
 """
 import turtle
 
 
 def draw_rectangle(x, y, width, height):
-    """绘制矩形"""
+    """繪製矩形"""
     turtle.goto(x, y)
     turtle.pencolor('red')
     turtle.fillcolor('red')
@@ -19,7 +19,7 @@ def draw_rectangle(x, y, width, height):
 
 
 def draw_star(x, y, radius):
-    """绘制五角星"""
+    """繪製五角星"""
     turtle.setpos(x, y)
     pos1 = turtle.pos()
     turtle.circle(-radius, 72)
@@ -45,10 +45,10 @@ def main():
     turtle.speed(12)
     turtle.penup()
     x, y = -270, -180
-    # 画国旗主体
+    # 畫國旗主體
     width, height = 540, 360
     draw_rectangle(x, y, width, height)
-    # 画大星星
+    # 畫大星星
     pice = 22
     center_x, center_y = x + 5 * pice, y + height - pice * 5
     turtle.goto(center_x, center_y)
@@ -57,16 +57,16 @@ def main():
     turtle.right(90)
     draw_star(turtle.xcor(), turtle.ycor(), pice * 3)
     x_poses, y_poses = [10, 12, 12, 10], [2, 4, 7, 9]
-    # 画小星星
+    # 畫小星星
     for x_pos, y_pos in zip(x_poses, y_poses):
         turtle.goto(x + x_pos * pice, y + height - y_pos * pice)
         turtle.left(turtle.towards(center_x, center_y) - turtle.heading())
         turtle.forward(pice)
         turtle.right(90)
         draw_star(turtle.xcor(), turtle.ycor(), pice)
-    # 隐藏海龟
+    # 隱藏海龜
     turtle.ht()
-    # 显示绘图窗口
+    # 顯示繪圖窗口
     turtle.mainloop()
 
 

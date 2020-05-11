@@ -7,7 +7,7 @@ import pygame
 
 @unique
 class Color(Enum):
-    """颜色"""
+    """顏色"""
 
     RED = (255, 0, 0)
     GREEN = (0, 255, 0)
@@ -18,7 +18,7 @@ class Color(Enum):
 
     @staticmethod
     def random_color():
-        """获得随机颜色"""
+        """獲得隨機顏色"""
         r = randint(0, 255)
         g = randint(0, 255)
         b = randint(0, 255)
@@ -39,7 +39,7 @@ class Ball(object):
         self.alive = True
 
     def move(self, screen):
-        """移动"""
+        """移動"""
         self.x += self.sx
         self.y += self.sy
         if self.x - self.radius <= 0 or self.x + self.radius >= screen.get_width():
@@ -58,28 +58,28 @@ class Ball(object):
                	self.radius = self.radius + int(other.radius * 0.146)
 
     def draw(self, screen):
-        """在窗口上绘制球"""
+        """在窗口上繪製球"""
         pygame.draw.circle(screen, self.color,
                            (self.x, self.y), self.radius, 0)
 
 
 def main():
-    # 定义用来装所有球的容器
+    # 定義用來裝所有球的容器
     balls = []
-    # 初始化导入的pygame中的模块
+    # 初始化導入的pygame中的模塊
     pygame.init()
-    # 初始化用于显示的窗口并设置窗口尺寸
+    # 初始化用於顯示的窗口並設置窗口尺寸
     screen = pygame.display.set_mode((800, 600))
     print(screen.get_width())
     print(screen.get_height())
-    # 设置当前窗口的标题
+    # 設置當前窗口的標題
     pygame.display.set_caption('大球吃小球')
-    # 定义变量来表示小球在屏幕上的位置
+    # 定義變量來表示小球在屏幕上的位置
     x, y = 50, 50
     running = True
-    # 开启一个事件循环处理发生的事件
+    # 開啓一個事件循環處理髮生的事件
     while running:
-        # 从消息队列中获取事件并对事件进行处理
+        # 從消息隊列中獲取事件並對事件進行處理
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
@@ -97,7 +97,7 @@ def main():
             else:
                 balls.remove(ball)
         pygame.display.flip()
-        # 每隔50毫秒就改变小球的位置再刷新窗口
+        # 每隔50毫秒就改變小球的位置再刷新窗口
         pygame.time.delay(50)
         for ball in balls:
             ball.move(screen)

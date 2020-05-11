@@ -20,7 +20,7 @@ def main():
             'https://www.taobao.com/',
             'https://www.douban.com/')
     # asyncio.set_event_loop_policy(uvloop.EventLoopPolicy())
-    # 获取事件循环（）
+    # 獲取事件循環（）
     loop = asyncio.get_event_loop()
     tasks = [show_title(url) for url in urls]
     loop.run_until_complete(asyncio.wait(tasks))

@@ -22,8 +22,8 @@
 	<body>
 		<div id="timer"></div>
 		<h1 id="bar" class="foo">Hello, world!</h1>
-		<button onclick="shutdown()">关闭</button>
-		<button onclick="openBaidu()">打开百度</button>
+		<button onclick="shutdown()">關閉</button>
+		<button onclick="openBaidu()">打開百度</button>
 		<script>
 			function openBaidu() {
 				window.open('https://www.baidu.com', '', 
@@ -31,7 +31,7 @@
 			}
 			
 			function shutdown() {
-				if (window.confirm('确定要退出吗？')) {
+				if (window.confirm('確定要退出嗎？')) {
 					window.close();
 				}
 			}
@@ -61,26 +61,26 @@
 			showTime();
 			window.setInterval(showTime, 1000);
 				
-// 			1TBS风格 - C/Unix - Dennis M. Ritchie
-// 			Allman风格 - FreeBSD - Allman
-// 			while循环 / do-while循环 / for循环
-// 			while循环 - 不确定循环的次数
-// 			for循环 - 循环的次数是确定的
-// 			do-while循环 - 至少执行一次
+// 			1TBS風格 - C/Unix - Dennis M. Ritchie
+// 			Allman風格 - FreeBSD - Allman
+// 			while循環 / do-while循環 / for循環
+// 			while循環 - 不確定循環的次數
+// 			for循環 - 循環的次數是確定的
+// 			do-while循環 - 至少執行一次
 // 			var flag = true;
 // 			do {
-// 				var yearStr = window.prompt('请输入年份: ');
+// 				var yearStr = window.prompt('請輸入年份: ');
 // 				var year = parseInt(yearStr);
 // 				if (year == yearStr && year > 0) {
 // 					if (year % 4 == 0 && year % 100 != 0
 // 						|| year % 400 == 0) {
-// 						window.alert(year + '年是闰年');
+// 						window.alert(year + '年是閏年');
 // 					} else {
-// 						window.alert(year + '年不是闰年');
+// 						window.alert(year + '年不是閏年');
 // 					}
-// 					flag = window.confirm('是否继续？');
+// 					flag = window.confirm('是否繼續？');
 // 				} else {
-// 					window.alert('请输入有效的年份!');
+// 					window.alert('請輸入有效的年份!');
 // 				}
 // 			} while (flag);
 		</script>

@@ -5,7 +5,7 @@ var saveSelectColor = {
 
 
 
-// 判断用户是否已有自己选择的模板风格
+// 判斷用戶是否已有自己選擇的模板風格
 if (storageLoad('SelcetColor')) {
     $('body').attr('class', storageLoad('SelcetColor').Color)
 } else {
@@ -14,7 +14,7 @@ if (storageLoad('SelcetColor')) {
 }
 
 
-// 本地缓存
+// 本地緩存
 function storageSave(objectData) {
     localStorage.setItem(objectData.Name, JSON.stringify(objectData));
 }

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>动态列表</title>
+    <title>動態列表</title>
     <style>
     	* {
 			margin: 0;
@@ -62,23 +62,23 @@
 <body>
     <div id="app">
         <ul id="fruits">
-            <li>苹果<a href="">×</a></li>
+            <li>蘋果<a href="">×</a></li>
             <li>香蕉<a href="">×</a></li>
-            <li>榴莲<a href="">×</a></li>
-            <li>火龙果<a href="">×</a></li>
+            <li>榴蓮<a href="">×</a></li>
+            <li>火龍果<a href="">×</a></li>
         </ul>
         <div>
             <input type="text" id="fname">
-            <button id="ok">确定</button>
+            <button id="ok">確定</button>
         </div>
     </div>
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
     <script>
-    // 1. $函数的参数是一个函数，该函数是页面加载完成后执行的回调函数
+    // 1. $函數的參數是一個函數，該函數是頁面加載完成後執行的回調函數
     $(() => {
         function removeItem(evt) {
             evt.preventDefault()
-            // 4. $函数的参数是原生JavaScript对象，返回该原生JavaScript对象对应的jQuery对象
+            // 4. $函數的參數是原生JavaScript對象，返回該原生JavaScript對象對應的jQuery對象
             $(evt.target).parent().remove()
         }
 
@@ -86,7 +86,7 @@
             let fname = $('#fname').val().trim()
             if (fname.length > 0) {
                 $('#fruits').append(
-                    // 3. $函数的参数是标签字符串，创建对应的标签元素并返回jQuery对象
+                    // 3. $函數的參數是標籤字符串，創建對應的標籤元素並返回jQuery對象
                     $('<li>').text(fname).append(
                         $('<a>').attr('href', '').text('×')
                         	.on('click', removeItem)
@@ -94,12 +94,12 @@
                 )
             }
             $('#fname').val('')
-            // jQuery对象通过下标运算或get方法可以获得与之对应的原生JavaScript对象
+            // jQuery對象通過下標運算或get方法可以獲得與之對應的原生JavaScript對象
             // input.get(0).focus()
             $('#fname')[0].focus()
         }
 
-        // 2. $函数的参数是选择器字符串，返回对应元素的jQuery对象
+        // 2. $函數的參數是選擇器字符串，返回對應元素的jQuery對象
         $('#fruits a').on('click', removeItem)
         $('#ok').on('click', addItem)
         $('#fname').on('keydown', (evt) => {

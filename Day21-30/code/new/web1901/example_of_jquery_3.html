@@ -2,10 +2,10 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Ajax请求</title>
+		<title>Ajax請求</title>
 	</head>
 	<body>
-		<button id="load">加载更多</button>
+		<button id="load">加載更多</button>
 		<div id="photos"></div>
 		<script>
 		(() => {
@@ -15,14 +15,14 @@
 			var page = 0
 			loadBtn.addEventListener('click', (evt) => {
 				page += 1
-				// 创建异步请求对象
+				// 創建異步請求對象
 				let xhr = new XMLHttpRequest()
-				// open方法的第一个参数是请求类型, 第二个参数是请求的URL, 第三个参数必须设置为true(异步请求)
+				// open方法的第一個參數是請求類型, 第二個參數是請求的URL, 第三個參數必須設置爲true(異步請求)
 				xhr.open('get', url + page, true)
-				// 绑定事件回调函数,在收到服务器返回的数据后要对页面进行局部刷新
+				// 綁定事件回調函數,在收到服務器返回的數據後要對頁面進行局部刷新
 				xhr.addEventListener('readystatechange', () => {
 					if (xhr.readyState == 4 && xhr.status == 200) {
-						// 将返回的JSON字符串解析成JavaScript的对象
+						// 將返回的JSON字符串解析成JavaScript的對象
 						let json = JSON.parse(xhr.responseText)
 						json.newslist.forEach((mm) => {
 							let img = document.createElement('img')
@@ -32,7 +32,7 @@
 						})
 					}
 				})
-				// 发送异步请求
+				// 發送異步請求
 				xhr.send()
 			})
 		})()

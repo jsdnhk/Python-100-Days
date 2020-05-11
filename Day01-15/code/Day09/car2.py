@@ -1,9 +1,9 @@
 """
-属性的使用
-- 使用已有方法定义访问器/修改器/删除器
+屬性的使用
+- 使用已有方法定義訪問器/修改器/刪除器
 
 Version: 0.1
-Author: 骆昊
+Author: 駱昊
 Date: 2018-03-12
 """
 
@@ -29,9 +29,9 @@ class Car(object):
         self._max_speed = max_speed
 
     def __str__(self):
-        return 'Car: [品牌=%s, 最高时速=%d]' % (self._brand, self._max_speed)
+        return 'Car: [品牌=%s, 最高時速=%d]' % (self._brand, self._max_speed)
 
-    # 用已有的修改器和访问器定义属性
+    # 用已有的修改器和訪問器定義屬性
     brand = property(get_brand, set_brand)
     max_speed = property(get_max_speed, set_max_speed)
 

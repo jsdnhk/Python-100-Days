@@ -1,7 +1,7 @@
 """
-创建PDF文件
+創建PDF文件
 
 Version: 0.1
-Author: 骆昊
+Author: 駱昊
 Date: 2018-03-26
 """

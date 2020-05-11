@@ -1,5 +1,5 @@
 $(function() {
-    // 读取body data-type 判断是哪个页面然后执行相应页面方法，方法在下面。
+    // 讀取body data-type 判斷是哪個頁面然後執行相應頁面方法，方法在下面。
     var dataType = $('body').attr('data-type');
     console.log(dataType);
     for (key in pageData) {
@@ -7,7 +7,7 @@ $(function() {
             pageData[key]();
         }
     }
-    //     // 判断用户是否已有自己选择的模板风格
+    //     // 判斷用戶是否已有自己選擇的模板風格
     //    if(storageLoad('SelcetColor')){
     //      $('body').attr('class',storageLoad('SelcetColor').Color)
     //    }else{
@@ -29,21 +29,21 @@ $(function() {
 })
 
 
-// 页面数据
+// 頁面數據
 var pageData = {
     // ===============================================
-    // 首页
+    // 首頁
     // ===============================================
     'index': function indexData() {
         $('#example-r').DataTable({
 
-            bInfo: false, //页脚信息
+            bInfo: false, //頁腳信息
             dom: 'ti'
         });
 
 
         // ==========================
-        // 百度图表A http://echarts.baidu.com/
+        // 百度圖表A http://echarts.baidu.com/
         // ==========================
 
         var echartsA = echarts.init(document.getElementById('tpl-echarts'));
@@ -61,7 +61,7 @@ var pageData = {
             xAxis: [{
                 type: 'category',
                 boundaryGap: false,
-                data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+                data: ['週一', '週二', '週三', '週四', '週五', '週六', '週日']
             }],
             yAxis: [{
                 type: 'value'
@@ -70,9 +70,9 @@ var pageData = {
                 color: '#838FA1'
             },
             series: [{
-                name: '邮件营销',
+                name: '郵件營銷',
                 type: 'line',
-                stack: '总量',
+                stack: '總量',
                 areaStyle: { normal: {} },
                 data: [120, 132, 101, 134, 90],
                 itemStyle: {
@@ -92,11 +92,11 @@ var pageData = {
         echartsA.setOption(option);
     },
     // ===============================================
-    // 图表页
+    // 圖表頁
     // ===============================================
     'chart': function chartData() {
         // ==========================
-        // 百度图表A http://echarts.baidu.com/
+        // 百度圖表A http://echarts.baidu.com/
         // ==========================
 
         var echartsC = echarts.init(document.getElementById('tpl-echarts-C'));
@@ -108,7 +108,7 @@ var pageData = {
             },
 
             legend: {
-                data: ['蒸发量', '降水量', '平均温度']
+                data: ['蒸發量', '降水量', '平均溫度']
             },
             xAxis: [{
                 type: 'category',
@@ -126,7 +126,7 @@ var pageData = {
                 },
                 {
                     type: 'value',
-                    name: '温度',
+                    name: '溫度',
                     min: 0,
                     max: 25,
                     interval: 5,
@@ -136,7 +136,7 @@ var pageData = {
                 }
             ],
             series: [{
-                    name: '蒸发量',
+                    name: '蒸發量',
                     type: 'bar',
                     data: [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3]
                 },
@@ -146,7 +146,7 @@ var pageData = {
                     data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3]
                 },
                 {
-                    name: '平均温度',
+                    name: '平均溫度',
                     type: 'line',
                     yAxisIndex: 1,
                     data: [2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 20.3, 23.4, 23.0, 16.5, 12.0, 6.2]
@@ -163,12 +163,12 @@ var pageData = {
             },
             legend: {
                 x: 'center',
-                data: ['某软件', '某主食手机', '某水果手机', '降水量', '蒸发量']
+                data: ['某軟件', '某主食手機', '某水果手機', '降水量', '蒸發量']
             },
             radar: [{
                     indicator: [
                         { text: '品牌', max: 100 },
-                        { text: '内容', max: 100 },
+                        { text: '內容', max: 100 },
                         { text: '可用性', max: 100 },
                         { text: '功能', max: 100 }
                     ],
@@ -177,9 +177,9 @@ var pageData = {
                 },
                 {
                     indicator: [
-                        { text: '外观', max: 100 },
+                        { text: '外觀', max: 100 },
                         { text: '拍照', max: 100 },
-                        { text: '系统', max: 100 },
+                        { text: '系統', max: 100 },
                         { text: '性能', max: 100 },
                         { text: '屏幕', max: 100 }
                     ],
@@ -206,7 +206,7 @@ var pageData = {
                     itemStyle: { normal: { areaStyle: { type: 'default' } } },
                     data: [{
                         value: [60, 73, 85, 40],
-                        name: '某软件'
+                        name: '某軟件'
                     }]
                 },
                 {
@@ -214,11 +214,11 @@ var pageData = {
                     radarIndex: 1,
                     data: [{
                             value: [85, 90, 90, 95, 95],
-                            name: '某主食手机'
+                            name: '某主食手機'
                         },
                         {
                             value: [95, 80, 95, 90, 93],
-                            name: '某水果手机'
+                            name: '某水果手機'
                         }
                     ]
                 },
@@ -231,7 +231,7 @@ var pageData = {
                             value: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 75.6, 82.2, 48.7, 18.8, 6.0, 2.3],
                         },
                         {
-                            name: '蒸发量',
+                            name: '蒸發量',
                             value: [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 35.6, 62.2, 32.6, 20.0, 6.4, 3.3]
                         }
                     ]
@@ -245,7 +245,7 @@ var pageData = {
                 trigger: 'axis',
             },
             legend: {
-                data: ['邮件', '媒体', '资源']
+                data: ['郵件', '媒體', '資源']
             },
             grid: {
                 left: '3%',
@@ -256,7 +256,7 @@ var pageData = {
             xAxis: [{
                 type: 'category',
                 boundaryGap: true,
-                data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+                data: ['週一', '週二', '週三', '週四', '週五', '週六', '週日']
             }],
 
             yAxis: [{
@@ -264,9 +264,9 @@ var pageData = {
             }],
             series: [
                 {
-                    name: '邮件',
+                    name: '郵件',
                     type: 'line',
-                    stack: '总量',
+                    stack: '總量',
                     areaStyle: { normal: {} },
                     data: [120, 132, 101, 134, 90, 230, 210],
                     itemStyle: {
@@ -279,9 +279,9 @@ var pageData = {
                     }
                 },
                 {
-                    name: '媒体',
+                    name: '媒體',
                     type: 'line',
-                    stack: '总量',
+                    stack: '總量',
                     areaStyle: { normal: {} },
                     data: [220, 182, 191, 234, 290, 330, 310],
                     itemStyle: {
@@ -291,9 +291,9 @@ var pageData = {
                     }
                 },
                 {
-                    name: '资源',
+                    name: '資源',
                     type: 'line',
-                    stack: '总量',
+                    stack: '總量',
                     areaStyle: { normal: {} },
                     data: [150, 232, 201, 154, 190, 330, 410],
                     itemStyle: {
@@ -305,7 +305,7 @@ var pageData = {
             ]
         };
 
-        // 通过WebSocket获取数据并刷新图表
+        // 通過WebSocket獲取數據並刷新圖表
         var ws = new WebSocket('ws://localhost:8888/ws/charts');
         ws.onmessage = function(evt) {
             var array = JSON.parse(evt.data);
@@ -318,7 +318,7 @@ var pageData = {
 }
 
 
-// 风格切换
+// 風格切換
 
 $('.tpl-skiner-toggle').on('click', function() {
     $('.tpl-skiner').toggleClass('active');
@@ -327,7 +327,7 @@ $('.tpl-skiner-toggle').on('click', function() {
 $('.tpl-skiner-content-bar').find('span').on('click', function() {
     $('body').attr('class', $(this).attr('data-color'))
     saveSelectColor.Color = $(this).attr('data-color');
-    // 保存选择项
+    // 保存選擇項
     storageSave(saveSelectColor);
 
 })
@@ -335,7 +335,7 @@ $('.tpl-skiner-content-bar').find('span').on('click', function() {
 
 
 
-// 侧边菜单开关
+// 側邊菜單開關
 
 
 function autoLeftNav() {
@@ -362,7 +362,7 @@ function autoLeftNav() {
 }
 
 
-// 侧边菜单
+// 側邊菜單
 $('.sidebar-nav-sub-title').on('click', function() {
     $(this).siblings('.sidebar-nav-sub').slideToggle(80)
         .end()
